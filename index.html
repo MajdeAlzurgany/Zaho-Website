@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaho - فلوسك في تليفونك / Your Money in Your Phone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        [dir="ltr"] {
+            direction: ltr;
+            text-align: left;
+        }
+        [dir="rtl"] {
+            direction: rtl;
+            text-align: right;
+        }
+        .lang-hidden {
+            display: none;
+        }
+        body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .section-padding {
+            padding: 5rem 0;
+        }
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <nav class="container mx-auto px-4 py-4 lg:py-5">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="assets/images/logo.png" alt="Zaho Logo" class="h-10 md:h-14 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <span class="text-2xl md:text-3xl font-bold gradient-text hidden">ZAHO</span>
+                </div>
+
+                <!-- Desktop Navbar -->
+                <div class="hidden lg:flex items-center space-x-8 rtl:space-x-reverse">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-indigo-600 transition font-medium" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600 transition font-medium" data-ar="من نحن" data-en="About">من نحن</a>
+                    <a href="#hawelli" class="nav-link text-gray-700 hover:text-indigo-600 transition font-medium" data-ar="حولي" data-en="Hawelli">حولي</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-indigo-600 transition font-medium" data-ar="الخدمات" data-en="Services">الخدمات</a>
+                    <a href="#solutions" class="nav-link text-gray-700 hover:text-indigo-600 transition font-medium" data-ar="الحلول" data-en="Solutions">الحلول</a>
+                    <a href="#contact" class="nav-link bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition font-medium" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a>
+                </div>
+
+                <!-- Language Switcher -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                    <button id="lang-ar" class="lang-btn px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-sm font-medium shadow-sm" data-lang="ar">العربية</button>
+                    <button id="lang-en" class="lang-btn px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 text-sm font-medium" data-lang="en">English</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-gray-700 p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 space-y-2">
+                <a href="#home" class="block py-2 px-4 rounded-lg nav-link hover:bg-gray-50" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                <a href="#about" class="block py-2 px-4 rounded-lg nav-link hover:bg-gray-50" data-ar="من نحن" data-en="About">من نحن</a>
+                <a href="#hawelli" class="block py-2 px-4 rounded-lg nav-link hover:bg-gray-50" data-ar="حولي" data-en="Hawelli">حولي</a>
+                <a href="#services" class="block py-2 px-4 rounded-lg nav-link hover:bg-gray-50" data-ar="الخدمات" data-en="Services">الخدمات</a>
+                <a href="#solutions" class="block py-2 px-4 rounded-lg nav-link hover:bg-gray-50" data-ar="الحلول" data-en="Solutions">الحلول</a>
+                <a href="#contact" class="block py-2 px-4 rounded-lg nav-link bg-indigo-600 text-white hover:bg-indigo-700" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative gradient-bg text-white section-padding overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <span class="lang-ar">فلوسك في تليفونك</span>
+                    <span class="lang-en lang-hidden">Your Money in Your Phone</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-10 text-white/90 max-w-2xl mx-auto leading-relaxed">
+                    <span class="lang-ar">زاهو - شركة مختصة في الحلول الرقمية المبتكرة والخدمات المالية الإلكترونية، نسعى إلى تطوير منظومة الدفع الرقمي في ليبيا</span>
+                    <span class="lang-en lang-hidden">Zaho - A company specialized in innovative digital solutions and electronic financial services, we strive to develop the digital payment system in Libya</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://hawelli.ly" target="_blank" class="inline-block bg-white text-indigo-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                        <span class="lang-ar">اكتشف حولي</span>
+                        <span class="lang-en lang-hidden">Discover Hawelli</span>
+                    </a>
+                    <a href="#about" class="inline-block bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition">
+                        <span class="lang-ar">اعرف المزيد</span>
+                        <span class="lang-en lang-hidden">Learn More</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+                    <span class="lang-ar">من نحن – شركة زاهو</span>
+                    <span class="lang-en lang-hidden">About Us – Zaho Company</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-8 md:p-12 mb-8 card-hover">
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                        <span class="lang-ar">زاهو هي احد الشركات المختصة في مجال الحلول الرقمية المبتكرة والخدمات المالية الإلكترونية، تسعى إلى تطوير منظومة الدفع الرقمي في ليبيا من خلال تقديم خدمات آمنة، مرنة، وسهلة الوصول.</span>
+                        <span class="lang-en lang-hidden">Zaho is one of the companies specialized in innovative digital solutions and electronic financial services, seeking to develop the digital payment system in Libya by providing secure, flexible, and accessible services.</span>
+                    </p>
+                </div>
+
+                <!-- What Makes Us Special -->
+                <div class="mb-12">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
+                        <span class="lang-ar">ما يميزنا</span>
+                        <span class="lang-en lang-hidden">What Makes Us Special</span>
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 card-hover">
+                            <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                <div class="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        <span class="lang-ar">حلول رقمية تلائم السوق الليبي وتستجيب لاحتياجات المستخدمين</span>
+                                        <span class="lang-en lang-hidden">Digital solutions that suit the Libyan market and respond to users' needs</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 card-hover">
+                            <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        <span class="lang-ar">فريق شاب يتمتع بالكفاءة والمرونة في التطوير والتشغيل</span>
+                                        <span class="lang-en lang-hidden">A young team with efficiency and flexibility in development and operations</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 card-hover">
+                            <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        <span class="lang-ar">التزام بأعلى معايير الأمان، الجودة، واستمرارية الخدمة</span>
+                                        <span class="lang-en lang-hidden">Commitment to the highest standards of security, quality, and service continuity</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 card-hover">
+                            <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        <span class="lang-ar">قدرة عالية على التوسع ومواكبة نمو القطاع الرقمي محليًا</span>
+                                        <span class="lang-en lang-hidden">High scalability and keeping pace with the growth of the digital sector locally</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vision & Mission -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-indigo-600 to-purple-600 text-white p-8 rounded-2xl shadow-xl card-hover">
+                        <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">
+                            <span class="lang-ar">رؤيتنا</span>
+                            <span class="lang-en lang-hidden">Our Vision</span>
+                        </h3>
+                        <p class="text-white/90 leading-relaxed">
+                            <span class="lang-ar">أن نكون من الشركات الرائدة في مجال الدفع الرقمي والخدمات المالية الإلكترونية في ليبيا، وأن نلعب دورًا فاعلًا في بناء اقتصاد رقمي مستدام.</span>
+                            <span class="lang-en lang-hidden">To be among the leading companies in digital payment and electronic financial services in Libya, and to play an active role in building a sustainable digital economy.</span>
+                        </p>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-600 to-pink-600 text-white p-8 rounded-2xl shadow-xl card-hover">
+                        <div class="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">
+                            <span class="lang-ar">رسالتنا</span>
+                            <span class="lang-en lang-hidden">Our Mission</span>
+                        </h3>
+                        <p class="text-white/90 leading-relaxed">
+                            <span class="lang-ar">نطمح إلى تعزيز الثقة بالخدمات الرقمية، وتسهيل وصول الأفراد والمؤسسات إلى أدوات مالية حديثة وآمنة، مما يساهم في تحقيق الشمول المالي والتحول نحو مجتمع أقل اعتمادًا على النقد.</span>
+                            <span class="lang-en lang-hidden">We aspire to enhance trust in digital services and facilitate access for individuals and institutions to modern and secure financial tools, contributing to financial inclusion and the transition to a less cash-dependent society.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hawelli Product Section -->
+    <section id="hawelli" class="section-padding bg-gradient-to-br from-gray-50 to-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+                    <span class="lang-ar">منتجنا الرئيسي: محفظة حولي</span>
+                    <span class="lang-en lang-hidden">Our Main Product: Hawelli Wallet</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6 text-gray-800">
+                            <span class="lang-ar">ما هي "حولي"؟</span>
+                            <span class="lang-en lang-hidden">What is "Hawelli"?</span>
+                        </h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                            <span class="lang-ar">Hawelli حولي هي المحفظة الإلكترونية المطورة من قبل شركة زاهو لخدمات الدفع الإلكتروني، وهي الحل الرقمي الذي سيُستخدم من قبل العملاء والتجار لإجراء المعاملات المالية بطريقة آمنة ومبسطة.</span>
+                            <span class="lang-en lang-hidden">Hawelli is the electronic wallet developed by Zaho for electronic payment services. It is the digital solution that will be used by customers and merchants to conduct financial transactions in a secure and simplified manner.</span>
+                        </p>
+                        <div class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg">
+                            <p class="text-sm text-gray-600 mb-2">
+                                <span class="lang-ar">📲 قريبًا على</span>
+                                <span class="lang-en lang-hidden">📲 Coming soon on</span>
+                            </p>
+                            <div class="flex gap-4">
+                                <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                                    <span class="font-semibold text-gray-700">App Store</span>
+                                </div>
+                                <div class="bg-gray-100 px-4 py-2 rounded-lg">
+                                    <span class="font-semibold text-gray-700">Google Play</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl shadow-xl">
+                        <h4 class="text-2xl font-bold mb-6 text-gray-800">
+                            <span class="lang-ar">مميزات Hawelli</span>
+                            <span class="lang-en lang-hidden">Hawelli Features</span>
+                        </h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                <div class="flex-shrink-0 w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center mt-1">
+                                    <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-700">
+                                    <span class="lang-ar">حماية عالية بفضل تقنيات التشفير</span>
+                                    <span class="lang-en lang-hidden">High protection thanks to encryption technologies</span>
+                                </p>
+                            </div>
+                            <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                <div class="flex-shrink-0 w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mt-1">
+                                    <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-700">
+                                    <span class="lang-ar">واجهة استخدام سهلة وبديهية</span>
+                                    <span class="lang-en lang-hidden">Easy and intuitive user interface</span>
+                                </p>
+                            </div>
+                            <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                <div class="flex-shrink-0 w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mt-1">
+                                    <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-700">
+                                    <span class="lang-ar">تحويل واستلام الأموال فورًا</span>
+                                    <span class="lang-en lang-hidden">Instant money transfer and receipt</span>
+                                </p>
+                            </div>
+                            <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                <div class="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mt-1">
+                                    <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-700">
+                                    <span class="lang-ar">دفع فواتير واشتراكات</span>
+                                    <span class="lang-en lang-hidden">Bill and subscription payments</span>
+                                </p>
+                            </div>
+                            <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                <div class="flex-shrink-0 w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center mt-1">
+                                    <svg class="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-700">
+                                    <span class="lang-ar">دعم الدفع لدى التجار وربط نقاط البيع</span>
+                                    <span class="lang-en lang-hidden">Support for merchant payments and POS integration</span>
+                                </p>
+                            </div>
+                            <div class="flex items-start space-x-3 rtl:space-x-reverse">
+                                <div class="flex-shrink-0 w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center mt-1">
+                                    <svg class="w-5 h-5 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-700">
+                                    <span class="lang-ar">تقارير ومتابعة آنية للرصيد والمعاملات</span>
+                                    <span class="lang-en lang-hidden">Real-time reports and tracking of balance and transactions</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-xl">
+                    <h4 class="text-2xl font-bold mb-6 text-gray-800">
+                        <span class="lang-ar">لمن صممت Hawelli؟</span>
+                        <span class="lang-en lang-hidden">Who is Hawelli Designed For?</span>
+                    </h4>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-indigo-50 rounded-xl">
+                            <div class="text-4xl mb-4">👤</div>
+                            <p class="font-semibold text-gray-800">
+                                <span class="lang-ar">الأفراد الباحثين عن وسيلة دفع آمنة وعصرية</span>
+                                <span class="lang-en lang-hidden">Individuals seeking a secure and modern payment method</span>
+                            </p>
+                        </div>
+                        <div class="text-center p-6 bg-purple-50 rounded-xl">
+                            <div class="text-4xl mb-4">🏪</div>
+                            <p class="font-semibold text-gray-800">
+                                <span class="lang-ar">التجار وأصحاب المشاريع الذين يحتاجون لحلول مالية مرنة</span>
+                                <span class="lang-en lang-hidden">Merchants and business owners who need flexible financial solutions</span>
+                            </p>
+                        </div>
+                        <div class="text-center p-6 bg-pink-50 rounded-xl">
+                            <div class="text-4xl mb-4">🏢</div>
+                            <p class="font-semibold text-gray-800">
+                                <span class="lang-ar">المؤسسات والشركات الصغيرة والمتوسطة</span>
+                                <span class="lang-en lang-hidden">Institutions and small to medium enterprises</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+                    <span class="lang-ar">خدماتنا الحالية والمستقبلية</span>
+                    <span class="lang-en lang-hidden">Our Current and Future Services</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl shadow-md border border-indigo-100 card-hover">
+                    <div class="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                        <span class="lang-ar">تطوير وتشغيل حلول مالية إلكترونية مخصصة</span>
+                        <span class="lang-en lang-hidden">Development and operation of customized electronic financial solutions</span>
+                    </h3>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl shadow-md border border-purple-100 card-hover">
+                    <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                        <span class="lang-ar">بناء بوابات دفع وتكامل مع الأنظمة المصرفية</span>
+                        <span class="lang-en lang-hidden">Building payment gateways and integration with banking systems</span>
+                    </h3>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-50 to-red-50 p-6 rounded-xl shadow-md border border-pink-100 card-hover">
+                    <div class="w-12 h-12 bg-pink-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                        <span class="lang-ar">تقديم أدوات إدارة مالية للمؤسسات والشركات الصغيرة</span>
+                        <span class="lang-en lang-hidden">Providing financial management tools for institutions and small companies</span>
+                    </h3>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl shadow-md border border-blue-100 card-hover">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                        <span class="lang-ar">دعم عمليات الدفع الإلكتروني وتطوير واجهات برمجة التطبيقات</span>
+                        <span class="lang-en lang-hidden">Supporting electronic payment operations and developing APIs</span>
+                    </h3>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-xl shadow-md border border-green-100 card-hover">
+                    <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                        <span class="lang-ar">تصميم أنظمة إدارة للنقاط التجارية والخدمية</span>
+                        <span class="lang-en lang-hidden">Designing management systems for commercial and service points</span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions by Sector -->
+    <section id="solutions" class="section-padding bg-gradient-to-br from-gray-50 to-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+                    <span class="lang-ar">نخدم من</span>
+                    <span class="lang-en lang-hidden">Who We Serve</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center card-hover border-t-4 border-indigo-600">
+                    <div class="text-5xl mb-4">👤</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">
+                        <span class="lang-ar">الأفراد</span>
+                        <span class="lang-en lang-hidden">Individuals</span>
+                    </h3>
+                    <p class="text-gray-600 text-sm">
+                        <span class="lang-ar">الباحثين عن خدمات دفع سهلة وآمنة</span>
+                        <span class="lang-en lang-hidden">Seeking easy and secure payment services</span>
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center card-hover border-t-4 border-green-600">
+                    <div class="text-5xl mb-4">🏪</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">
+                        <span class="lang-ar">التجار</span>
+                        <span class="lang-en lang-hidden">Merchants</span>
+                    </h3>
+                    <p class="text-gray-600 text-sm">
+                        <span class="lang-ar">أصحاب المشاريع الصغيرة والمتوسطة</span>
+                        <span class="lang-en lang-hidden">Small and medium business owners</span>
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center card-hover border-t-4 border-purple-600">
+                    <div class="text-5xl mb-4">🏢</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">
+                        <span class="lang-ar">المؤسسات</span>
+                        <span class="lang-en lang-hidden">Institutions</span>
+                    </h3>
+                    <p class="text-gray-600 text-sm">
+                        <span class="lang-ar">الراغبة في تبنّي حلول مالية إلكترونية حديثة</span>
+                        <span class="lang-en lang-hidden">Wanting to adopt modern electronic financial solutions</span>
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center card-hover border-t-4 border-pink-600">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">
+                        <span class="lang-ar">الشركاء</span>
+                        <span class="lang-en lang-hidden">Partners</span>
+                    </h3>
+                    <p class="text-gray-600 text-sm">
+                        <span class="lang-ar">في قطاع التكنولوجيا والبنوك وشركات الاتصالات</span>
+                        <span class="lang-en lang-hidden">In technology, banking, and telecommunications sectors</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+                    <span class="lang-ar">اتصل بنا</span>
+                    <span class="lang-en lang-hidden">Contact Us</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto rounded"></div>
+                <p class="text-gray-600 mt-6 text-lg max-w-2xl mx-auto">
+                    <span class="lang-ar">نحن هنا لمساعدتك. أرسل لنا رسالة وسنرد عليك في أقرب وقت ممكن.</span>
+                    <span class="lang-en lang-hidden">We're here to help. Send us a message and we'll respond as soon as possible.</span>
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">
+                            <span class="lang-ar">أرسل رسالة</span>
+                            <span class="lang-en lang-hidden">Send a Message</span>
+                        </h3>
+                        <form id="contact-form" class="space-y-5">
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">
+                                    <span class="lang-ar">الاسم</span>
+                                    <span class="lang-en lang-hidden">Name</span>
+                                </label>
+                                <input type="text" name="user_name" required 
+                                    class="w-full px-4 py-3 rounded-lg bg-white text-gray-800 border border-gray-300 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">
+                                    <span class="lang-ar">البريد الإلكتروني</span>
+                                    <span class="lang-en lang-hidden">Email</span>
+                                </label>
+                                <input type="email" name="user_email" required 
+                                    class="w-full px-4 py-3 rounded-lg bg-white text-gray-800 border border-gray-300 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">
+                                    <span class="lang-ar">الموضوع</span>
+                                    <span class="lang-en lang-hidden">Subject</span>
+                                </label>
+                                <input type="text" name="subject" required 
+                                    class="w-full px-4 py-3 rounded-lg bg-white text-gray-800 border border-gray-300 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 font-semibold mb-2">
+                                    <span class="lang-ar">الرسالة</span>
+                                    <span class="lang-en lang-hidden">Message</span>
+                                </label>
+                                <textarea name="message" rows="5" required 
+                                    class="w-full px-4 py-3 rounded-lg bg-white text-gray-800 border border-gray-300 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200 transition"></textarea>
+                            </div>
+
+                            <button type="submit" 
+                                class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-xl transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                                <span class="lang-ar">إرسال الرسالة</span>
+                                <span class="lang-en lang-hidden">Send Message</span>
+                            </button>
+                        </form>
+                        <div id="form-message" class="mt-6 hidden"></div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="space-y-6">
+                        <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800">
+                                <span class="lang-ar">معلومات الاتصال</span>
+                                <span class="lang-en lang-hidden">Contact Information</span>
+                            </h3>
+                            <div class="space-y-5">
+                                <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                    <div class="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 mb-1">
+                                            <span class="lang-ar">البريد الإلكتروني</span>
+                                            <span class="lang-en lang-hidden">Email</span>
+                                        </p>
+                                        <a href="mailto:info@zaho.ly" class="text-indigo-600 hover:text-indigo-700">info@zaho.ly</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                    <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 mb-1">
+                                            <span class="lang-ar">الهاتف</span>
+                                            <span class="lang-en lang-hidden">Phone</span>
+                                        </p>
+                                        <a href="tel:+218912615455" class="text-indigo-600 hover:text-indigo-700">+218 91 261 5455</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                    <div class="flex-shrink-0 w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 mb-1">
+                                            <span class="lang-ar">الموقع الإلكتروني</span>
+                                            <span class="lang-en lang-hidden">Website</span>
+                                        </p>
+                                        <a href="https://www.zaho.ly" target="_blank" class="text-indigo-600 hover:text-indigo-700">www.zaho.ly</a>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                    <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 mb-1">
+                                            <span class="lang-ar">مقر الشركة</span>
+                                            <span class="lang-en lang-hidden">Office Address</span>
+                                        </p>
+                                        <p class="text-gray-700">
+                                            <span class="lang-ar">جنزور – طرابلس – ليبيا</span>
+                                            <span class="lang-en lang-hidden">Janzour – Tripoli – Libya</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-indigo-600 to-purple-600 text-white p-8 rounded-2xl shadow-xl">
+                            <h4 class="text-xl font-bold mb-4">
+                                <span class="lang-ar">ابدأ رحلتك مع حولي اليوم</span>
+                                <span class="lang-en lang-hidden">Start Your Journey with Hawelli Today</span>
+                            </h4>
+                            <p class="mb-6 text-white/90">
+                                <span class="lang-ar">اكتشف المحفظة الإلكترونية التي ستغير طريقة تعاملك مع المال</span>
+                                <span class="lang-en lang-hidden">Discover the electronic wallet that will change the way you deal with money</span>
+                            </p>
+                            <a href="https://hawelli.ly" target="_blank" class="inline-block bg-white text-indigo-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-lg">
+                                <span class="lang-ar">اكتشف حولي</span>
+                                <span class="lang-en lang-hidden">Discover Hawelli</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">ZAHO</h4>
+                    <p class="text-gray-400 text-sm">
+                        <span class="lang-ar">شركة مختصة في الحلول الرقمية المبتكرة والخدمات المالية الإلكترونية</span>
+                        <span class="lang-en lang-hidden">A company specialized in innovative digital solutions and electronic financial services</span>
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">
+                        <span class="lang-ar">روابط سريعة</span>
+                        <span class="lang-en lang-hidden">Quick Links</span>
+                    </h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#about" class="hover:text-white transition"><span class="lang-ar">من نحن</span><span class="lang-en lang-hidden">About Us</span></a></li>
+                        <li><a href="#hawelli" class="hover:text-white transition"><span class="lang-ar">حولي</span><span class="lang-en lang-hidden">Hawelli</span></a></li>
+                        <li><a href="#services" class="hover:text-white transition"><span class="lang-ar">الخدمات</span><span class="lang-en lang-hidden">Services</span></a></li>
+                        <li><a href="#contact" class="hover:text-white transition"><span class="lang-ar">اتصل بنا</span><span class="lang-en lang-hidden">Contact Us</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">
+                        <span class="lang-ar">السياسات</span>
+                        <span class="lang-en lang-hidden">Policies</span>
+                    </h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Acceptable Use</a></li>
+                        <li><a href="#" class="hover:text-white transition">Security & Safety</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">
+                        <span class="lang-ar">تابعنا</span>
+                        <span class="lang-en lang-hidden">Follow Us</span>
+                    </h4>
+                    <div class="flex space-x-4 rtl:space-x-reverse">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Zaho. <span class="lang-ar">جميع الحقوق محفوظة</span><span class="lang-en lang-hidden">All rights reserved</span>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

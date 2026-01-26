@@ -1,0 +1,26 @@
+// Main Application Entry Point
+// Initialize all modules when DOM is ready
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Language Manager
+    window.languageManager = new LanguageManager();
+    
+    // Initialize Theme Manager
+    window.themeManager = new ThemeManager();
+    
+    // Initialize Navigation Manager
+    window.navigationManager = new NavigationManager();
+    
+    // Initialize Contact Form Manager
+    window.contactFormManager = new ContactFormManager();
+    
+    // Initialize scroll effects
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header?.classList.add('shadow-lg');
+        } else {
+            header?.classList.remove('shadow-lg');
+        }
+    });
+});
