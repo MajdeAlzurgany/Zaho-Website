@@ -45,21 +45,44 @@ class LanguageManager {
             const key = el.getAttribute('data-i18n');
             const text = this.getText(key);
             
+            if (!text || text === key) return; // Skip if translation not found
+            
             if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                 el.placeholder = text;
+            } else if (el.tagName === 'LABEL') {
+                el.textContent = text;
             } else {
                 el.textContent = text;
             }
         });
 
+        // Update language visibility
+        document.querySelectorAll('.lang-ar').forEach(el => {
+            el.classList.toggle('lang-hidden', lang !== 'ar');
+        });
+        document.querySelectorAll('.lang-en').forEach(el => {
+            el.classList.toggle('lang-hidden', lang !== 'en');
+        });
+
         // Update language buttons
         document.querySelectorAll('.lang-btn').forEach(btn => {
             if (btn.dataset.lang === lang) {
-                btn.classList.remove('bg-gray-100', 'text-gray-700');
+                btn.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
                 btn.classList.add('bg-indigo-600', 'text-white');
             } else {
                 btn.classList.remove('bg-indigo-600', 'text-white');
-                btn.classList.add('bg-gray-100', 'text-gray-700');
+                btn.classList.add('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300');
+            }
+        });
+
+        // Update navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const key = link.getAttribute('data-i18n');
+            if (key) {
+                const text = this.getText(key);
+                if (text && text !== key) {
+                    link.textContent = text;
+                }
             }
         });
 

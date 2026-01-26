@@ -1,138 +1,161 @@
 # Zaho Corporate Website
 
-A fully responsive, bilingual (Arabic/English) corporate website for Zaho, built with Tailwind CSS.
+موقع شركة زاهو الإلكتروني - موقع احترافي متعدد اللغات مع دعم الوضع الداكن
 
-## Features
+## المميزات
 
-- ✅ Fully responsive design (Desktop, Tablet, Mobile)
-- ✅ Bilingual support (Arabic/English) with language switcher
-- ✅ All required sections: Header, Hero, About, Services, Solutions, Partners, CTA, Footer
-- ✅ Contact form ready for EmailJS or Formspree integration
-- ✅ Clean folder structure
-- ✅ Modern UI with Tailwind CSS
-- ✅ Smooth scrolling navigation
-- ✅ Mobile-friendly menu
+- ✅ تصميم عصري واحترافي
+- ✅ دعم كامل للغة العربية والإنجليزية
+- ✅ وضع داكن ووضع فاتح (Dark/Light Mode)
+- ✅ تصميم متجاوب بالكامل (Responsive)
+- ✅ أيقونات احترافية (Heroicons)
+- ✅ بنية كود منظمة وفق قواعد هندسة البرمجيات
+- ✅ ملفات منفصلة للغات (JSON)
+- ✅ وحدات JavaScript منفصلة (Modular)
+- ✅ سهولة الصيانة والتطوير
 
-## Folder Structure
+## البنية التنظيمية
 
 ```
 zaho/
-├── index.html          # Main homepage
-├── contact.html        # Contact page
+├── index.html              # الصفحة الرئيسية
+├── contact.html            # صفحة الاتصال
+├── pages/                  # صفحات إضافية (قيد التطوير)
 ├── assets/
 │   ├── css/
-│   │   └── tailwind.css    # Custom Tailwind styles
+│   │   └── tailwind.css    # ملفات CSS المخصصة
 │   ├── js/
-│   │   └── main.js         # JavaScript for interactivity
-│   └── images/             # Images and logos
-└── README.md          # This file
+│   │   ├── main.js         # نقطة الدخول الرئيسية
+│   │   └── modules/
+│   │       ├── language.js      # إدارة اللغات
+│   │       ├── theme.js         # إدارة الوضع الداكن/الفاتح
+│   │       ├── navigation.js    # إدارة التنقل
+│   │       └── contactForm.js   # إدارة نموذج الاتصال
+│   ├── lang/
+│   │   ├── ar.json         # ترجمات اللغة العربية
+│   │   └── en.json         # ترجمات اللغة الإنجليزية
+│   └── images/             # الصور والأيقونات
+└── README.md
 ```
 
-## Setup Instructions
+## الملفات والوحدات
 
-### 1. Basic Setup
+### ملفات اللغة (JSON)
+- `assets/lang/ar.json` - جميع النصوص بالعربية
+- `assets/lang/en.json` - جميع النصوص بالإنجليزية
 
-1. Clone or download this repository
-2. Open `index.html` in a web browser
-3. The website should work immediately with Tailwind CDN
+### وحدات JavaScript
+- `language.js` - إدارة التبديل بين اللغات
+- `theme.js` - إدارة الوضع الداكن/الفاتح
+- `navigation.js` - إدارة القائمة والتنقل السلس
+- `contactForm.js` - معالجة نموذج الاتصال
 
-### 2. Contact Form Setup
+## الإعداد والتشغيل
 
-The contact form needs to be configured to send emails. Choose one of the following options:
+### 1. الإعداد الأساسي
 
-#### Option A: Using Formspree (Recommended - Easiest)
+1. قم بتحميل أو استنساخ المشروع
+2. افتح `index.html` في المتصفح
+3. الموقع يعمل مباشرة مع Tailwind CDN
 
-1. Go to [Formspree.io](https://formspree.io) and create a free account
-2. Create a new form
-3. Copy your Formspree form ID
-4. Open `assets/js/main.js`
-5. Find the line: `const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {`
-6. Replace `YOUR_FORMSPREE_ID` with your actual Formspree form ID
-7. The form will now send emails to the address you configured in Formspree
+### 2. إعداد نموذج الاتصال
 
-#### Option B: Using EmailJS
+#### خيار أ: استخدام Formspree (الأسهل)
 
-1. Go to [EmailJS.com](https://www.emailjs.com) and create a free account
-2. Create an email service (Gmail, Outlook, etc.)
-3. Create an email template
-4. Get your Public Key, Service ID, and Template ID
-5. Open `assets/js/main.js`
-6. Uncomment the EmailJS initialization line and add your public key:
-   ```javascript
-   emailjs.init("YOUR_PUBLIC_KEY");
-   ```
-7. Update the emailjs.send() call with your Service ID and Template ID
-8. Configure the template to send emails to: info@zaho.ly
+1. اذهب إلى [Formspree.io](https://formspree.io) وأنشئ حساب مجاني
+2. أنشئ نموذج جديد
+3. انسخ معرف النموذج (Form ID)
+4. افتح `assets/js/modules/contactForm.js`
+5. ابحث عن السطر: `'https://formspree.io/f/YOUR_FORMSPREE_ID'`
+6. استبدل `YOUR_FORMSPREE_ID` بمعرف النموذج الخاص بك
+7. النموذج سيرسل البريد الإلكتروني إلى العنوان المحدد في Formspree
 
-### 3. Adding Your Logo
+#### خيار ب: استخدام EmailJS
 
-1. Place your logo image in `assets/images/logo.png`
-2. The website will automatically use it
-3. If the logo doesn't exist, it will show "ZAHO" text instead
+1. اذهب إلى [EmailJS.com](https://www.emailjs.com) وأنشئ حساب مجاني
+2. أنشئ خدمة بريد إلكتروني
+3. أنشئ قالب بريد إلكتروني
+4. احصل على Public Key و Service ID و Template ID
+5. افتح `assets/js/modules/contactForm.js`
+6. قم بتعديل الكود لاستخدام EmailJS
 
-### 4. Customizing Content
+### 3. إضافة الشعار
 
-All text content is in both Arabic and English. To update:
+1. ضع ملف الشعار في `assets/images/logo.png`
+2. الموقع سيستخدمه تلقائياً
+3. إذا لم يوجد الشعار، سيظهر نص "ZAHO" بدلاً منه
 
-1. Open `index.html`
-2. Find the section you want to edit
-3. Look for elements with classes `lang-ar` and `lang-en`
-4. Update the text inside these elements
+### 4. تخصيص المحتوى
 
-### 5. Adding Images
+جميع النصوص موجودة في ملفات JSON:
+- لتعديل نص عربي: عدل `assets/lang/ar.json`
+- لتعديل نص إنجليزي: عدل `assets/lang/en.json`
 
-1. Place images in `assets/images/`
-2. Update image paths in HTML where needed
-3. Currently using emoji icons as placeholders - replace with actual images as needed
+استخدم المفتاح `data-i18n` في HTML للإشارة إلى النص:
+```html
+<h1 data-i18n="hero.title">النص الافتراضي</h1>
+```
 
-## Customization
+### 5. الوضع الداكن/الفاتح
 
-### Colors
+- اضغط على زر الوضع الداكن في الهيدر للتبديل
+- التفضيل يُحفظ تلقائياً في المتصفح
+- يدعم جميع العناصر والألوان
 
-The website uses a blue color scheme. To change colors:
+## الميزات التقنية
 
-1. Search for `bg-blue-600`, `text-blue-600`, etc. in the HTML files
-2. Replace with your preferred Tailwind color classes
-3. Common colors: `blue`, `green`, `purple`, `red`, `orange`, `indigo`
+### إدارة اللغات
+- استخدام `data-i18n` attribute في HTML
+- ملفات JSON منفصلة لكل لغة
+- حفظ تفضيل اللغة في localStorage
+- تبديل تلقائي للاتجاه (RTL/LTR)
 
-### Fonts
+### الوضع الداكن
+- دعم كامل لجميع العناصر
+- ألوان محسّنة للقراءة
+- حفظ التفضيل في localStorage
+- انتقالات سلسة
 
-The website uses system fonts. To add custom fonts:
+### الأيقونات
+- استخدام Heroicons (SVG)
+- أيقونات احترافية وواضحة
+- دعم الوضع الداكن
+- حجم قابل للتعديل
 
-1. Add font imports in the `<head>` section
-2. Update the font-family in `assets/css/tailwind.css`
+### التنقل
+- قائمة متجاوبة للجوال
+- تنقل سلس بين الأقسام
+- إغلاق تلقائي للقائمة عند النقر
 
-### Sections
+## التطوير المستقبلي
 
-All sections are clearly marked with IDs:
-- `#home` - Hero section
-- `#about` - About section
-- `#services` - Services section
-- `#solutions` - Solutions by sector
-- `#partners` - Partners section
-- `#contact` - Contact form in footer
+### الصفحات المخطط لها:
+- [ ] صفحة حول زاهو (About)
+- [ ] صفحة الخدمات (Services)
+- [ ] صفحة حولي (Hawelli)
+- [ ] صفحة المطورين (Developers)
+- [ ] صفحة الأخبار (News)
+- [ ] صفحة الموارد (Resources)
 
-## Browser Support
+## المتصفحات المدعومة
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+- Chrome (الأحدث)
+- Firefox (الأحدث)
+- Safari (الأحدث)
+- Edge (الأحدث)
+- متصفحات الجوال (iOS Safari, Chrome Mobile)
 
-## Notes
+## الملاحظات
 
-- The website uses Tailwind CSS via CDN for easy setup
-- For production, consider using Tailwind CLI for optimized CSS
-- All placeholder content should be replaced with actual company information
-- Phone numbers and addresses are placeholders - update them in the footer section
-- Partner logos are placeholders - add actual partner logos in the Partners section
+- الموقع يستخدم Tailwind CSS عبر CDN للسهولة
+- للإنتاج، يُنصح باستخدام Tailwind CLI لتحسين CSS
+- جميع المحتوى موجود في ملفات JSON لسهولة التعديل
+- أرقام الهواتف والعناوين قابلة للتعديل في ملفات JSON
 
-## Support
+## الدعم
 
-For questions or issues, please contact: info@zaho.ly
+للأسئلة أو المشاكل، يرجى التواصل: info@zaho.ly
 
-## License
+## الترخيص
 
-© 2024 Zaho. All rights reserved.
-
+© 2024 Zaho. جميع الحقوق محفوظة.
