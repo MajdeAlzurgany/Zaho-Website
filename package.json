@@ -1,0 +1,22 @@
+{
+  "name": "zaho-website",
+  "version": "1.0.0",
+  "description": "Zaho Corporate Website - Modern bilingual corporate website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve . -l 3000",
+    "build": "echo 'No build step needed - static site'"
+  },
+  "keywords": [
+    "zaho",
+    "corporate",
+    "website",
+    "tailwind",
+    "bilingual"
+  ],
+  "author": "Zaho",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
+}

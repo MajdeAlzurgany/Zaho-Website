@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Zaho</title>
+    <link rel="icon" type="image/png" href="assets/images/zaho-logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/tailwind.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -29,25 +30,25 @@
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="index.html">
-                        <img src="assets/images/logo.png" alt="Zaho Logo" class="h-12 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <img src="assets/images/zaho-logo.png" alt="Zaho Logo" class="h-12 md:h-14 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                         <span class="text-2xl font-bold text-blue-600 hidden">ZAHO</span>
                     </a>
                 </div>
 
                 <!-- Desktop Navbar -->
                 <div class="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
-                    <a href="index.html#home" class="nav-link text-gray-700 hover:text-blue-600 transition" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-                    <a href="index.html#about" class="nav-link text-gray-700 hover:text-blue-600 transition" data-ar="من نحن" data-en="About">من نحن</a>
-                    <a href="index.html#services" class="nav-link text-gray-700 hover:text-blue-600 transition" data-ar="الخدمات" data-en="Services">الخدمات</a>
-                    <a href="index.html#solutions" class="nav-link text-gray-700 hover:text-blue-600 transition" data-ar="الحلول" data-en="Solutions">الحلول</a>
-                    <a href="index.html#partners" class="nav-link text-gray-700 hover:text-blue-600 transition" data-ar="الشركاء" data-en="Partners">الشركاء</a>
-                    <a href="index.html#contact" class="nav-link text-blue-600 font-semibold transition" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a>
+                    <a href="index.html#home" class="nav-link text-gray-700 hover:text-blue-600 transition" data-i18n="nav.home">الرئيسية</a>
+                    <a href="index.html#about" class="nav-link text-gray-700 hover:text-blue-600 transition" data-i18n="nav.about">من نحن</a>
+                    <a href="index.html#services" class="nav-link text-gray-700 hover:text-blue-600 transition" data-i18n="nav.services">الخدمات</a>
+                    <a href="index.html#solutions" class="nav-link text-gray-700 hover:text-blue-600 transition" data-i18n="nav.solutions">الحلول</a>
+                    <a href="index.html#partners" class="nav-link text-gray-700 hover:text-blue-600 transition" data-i18n="nav.partners">الشركاء</a>
+                    <a href="index.html#contact" class="nav-link text-blue-600 font-semibold transition" data-i18n="nav.contact">اتصل بنا</a>
                 </div>
 
                 <!-- Language Switcher -->
                 <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                    <button id="lang-ar" class="lang-btn px-3 py-1 rounded bg-blue-600 text-white text-sm font-medium" data-lang="ar">العربية</button>
-                    <button id="lang-en" class="lang-btn px-3 py-1 rounded bg-gray-200 text-gray-700 text-sm font-medium" data-lang="en">English</button>
+                    <button id="lang-ar" class="lang-btn px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 text-sm font-medium shadow-sm" data-lang="ar">العربية</button>
+                    <button id="lang-en" class="lang-btn px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium" data-lang="en">English</button>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -60,12 +61,12 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
-                <a href="index.html#home" class="block py-2 nav-link" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-                <a href="index.html#about" class="block py-2 nav-link" data-ar="من نحن" data-en="About">من نحن</a>
-                <a href="index.html#services" class="block py-2 nav-link" data-ar="الخدمات" data-en="Services">الخدمات</a>
-                <a href="index.html#solutions" class="block py-2 nav-link" data-ar="الحلول" data-en="Solutions">الحلول</a>
-                <a href="index.html#partners" class="block py-2 nav-link" data-ar="الشركاء" data-en="Partners">الشركاء</a>
-                <a href="index.html#contact" class="block py-2 nav-link text-blue-600 font-semibold" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a>
+                <a href="index.html#home" class="block py-2 nav-link" data-i18n="nav.home">الرئيسية</a>
+                <a href="index.html#about" class="block py-2 nav-link" data-i18n="nav.about">من نحن</a>
+                <a href="index.html#services" class="block py-2 nav-link" data-i18n="nav.services">الخدمات</a>
+                <a href="index.html#solutions" class="block py-2 nav-link" data-i18n="nav.solutions">الحلول</a>
+                <a href="index.html#partners" class="block py-2 nav-link" data-i18n="nav.partners">الشركاء</a>
+                <a href="index.html#contact" class="block py-2 nav-link text-blue-600 font-semibold" data-i18n="nav.contact">اتصل بنا</a>
             </div>
         </nav>
     </header>
@@ -74,58 +75,37 @@
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto">
-                <h1 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-800">
-                    <span class="lang-ar">اتصل بنا</span>
-                    <span class="lang-en lang-hidden">Contact Us</span>
-                </h1>
-                <p class="text-center text-gray-600 mb-12 text-lg">
-                    <span class="lang-ar">نحن هنا لمساعدتك. أرسل لنا رسالة وسنرد عليك في أقرب وقت ممكن.</span>
-                    <span class="lang-en lang-hidden">We're here to help. Send us a message and we'll respond as soon as possible.</span>
-                </p>
+                <h1 class="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-800" data-i18n="contact.title">اتصل بنا</h1>
+                <p class="text-center text-gray-600 mb-12 text-lg" data-i18n="contact.subtitle">نحن هنا لمساعدتك. أرسل لنا رسالة وسنرد عليك في أقرب وقت ممكن.</p>
 
                 <div class="bg-white shadow-lg rounded-lg p-8">
                     <form id="contact-form" class="space-y-6">
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">
-                                <span class="lang-ar">الاسم</span>
-                                <span class="lang-en lang-hidden">Name</span>
-                            </label>
+                            <label class="block text-gray-700 font-semibold mb-2" data-i18n="contact.name">الاسم</label>
                             <input type="text" name="user_name" required 
                                 class="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200">
                         </div>
 
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">
-                                <span class="lang-ar">البريد الإلكتروني</span>
-                                <span class="lang-en lang-hidden">Email</span>
-                            </label>
+                            <label class="block text-gray-700 font-semibold mb-2" data-i18n="contact.email">البريد الإلكتروني</label>
                             <input type="email" name="user_email" required 
                                 class="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200">
                         </div>
 
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">
-                                <span class="lang-ar">الموضوع</span>
-                                <span class="lang-en lang-hidden">Subject</span>
-                            </label>
+                            <label class="block text-gray-700 font-semibold mb-2" data-i18n="contact.subject">الموضوع</label>
                             <input type="text" name="subject" required 
                                 class="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200">
                         </div>
 
                         <div>
-                            <label class="block text-gray-700 font-semibold mb-2">
-                                <span class="lang-ar">الرسالة</span>
-                                <span class="lang-en lang-hidden">Message</span>
-                            </label>
+                            <label class="block text-gray-700 font-semibold mb-2" data-i18n="contact.message">الرسالة</label>
                             <textarea name="message" rows="6" required 
                                 class="w-full px-4 py-3 rounded-lg bg-gray-50 text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"></textarea>
                         </div>
 
                         <button type="submit" 
-                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition shadow-lg">
-                            <span class="lang-ar">إرسال الرسالة</span>
-                            <span class="lang-en lang-hidden">Send Message</span>
-                        </button>
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition shadow-lg" data-i18n="contact.send">إرسال الرسالة</button>
                     </form>
 
                     <div id="form-message" class="mt-6 hidden"></div>
@@ -134,25 +114,19 @@
                 <!-- Contact Information -->
                 <div class="mt-12 grid md:grid-cols-2 gap-6">
                     <div class="bg-blue-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4 text-gray-800">
-                            <span class="lang-ar">معلومات الاتصال</span>
-                            <span class="lang-en lang-hidden">Contact Information</span>
-                        </h3>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800" data-i18n="contact.contactInfo">معلومات الاتصال</h3>
                         <div class="space-y-3 text-gray-700">
-                            <p><strong>Email:</strong> info@zaho.ly</p>
-                            <p><strong>Phone:</strong> +218 XX XXX XXXX</p>
-                            <p><strong>Website:</strong> www.zaho.ly</p>
+                            <p><strong data-i18n="contact.emailLabel">البريد الإلكتروني:</strong> info@zaho.ly</p>
+                            <p><strong data-i18n="contact.phoneLabel">الهاتف:</strong> +218 91 261 5455</p>
+                            <p><strong data-i18n="contact.websiteLabel">الموقع الإلكتروني:</strong> www.zaho.ly</p>
                         </div>
                     </div>
 
                     <div class="bg-gray-50 p-6 rounded-lg">
-                        <h3 class="text-xl font-semibold mb-4 text-gray-800">
-                            <span class="lang-ar">ساعات العمل</span>
-                            <span class="lang-en lang-hidden">Working Hours</span>
-                        </h3>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800" data-i18n="contact.workingHoursTitle">ساعات العمل</h3>
                         <div class="space-y-2 text-gray-700">
-                            <p><span class="lang-ar">الأحد - الخميس:</span><span class="lang-en lang-hidden">Sunday - Thursday:</span> 9:00 AM - 5:00 PM</p>
-                            <p><span class="lang-ar">الجمعة - السبت:</span><span class="lang-en lang-hidden">Friday - Saturday:</span> <span class="lang-ar">مغلق</span><span class="lang-en lang-hidden">Closed</span></p>
+                            <p data-i18n="contact.workingHoursWeek">الأحد - الخميس: 9:00 AM - 5:00 PM</p>
+                            <p data-i18n="contact.workingHoursWeekend">الجمعة - السبت: مغلق</p>
                         </div>
                     </div>
                 </div>
@@ -164,12 +138,23 @@
     <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-4">
             <div class="text-center text-gray-400">
-                <p>&copy; 2024 Zaho. <span class="lang-ar">جميع الحقوق محفوظة</span><span class="lang-en lang-hidden">All rights reserved</span>.</p>
+                <p>&copy; <span id="current-year-contact"></span> Zaho. <span data-i18n="footer.copyright">جميع الحقوق محفوظة</span>.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Load JavaScript Modules -->
+    <script src="assets/js/modules/language.js"></script>
+    <script src="assets/js/modules/theme.js"></script>
+    <script src="assets/js/modules/navigation.js"></script>
+    <script src="assets/js/modules/contactForm.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        // Set dynamic current year in footer for contact page
+        const y = new Date().getFullYear();
+        const el = document.getElementById('current-year-contact');
+        if (el) el.textContent = y;
+    </script>
 </body>
 </html>
 

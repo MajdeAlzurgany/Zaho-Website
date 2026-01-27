@@ -8,19 +8,44 @@ class LanguageManager {
 
     async init() {
         await this.loadTranslations();
-        this.applyLanguage(this.currentLang);
-        this.setupEventListeners();
+        // Wait a bit for DOM to be fully ready
+        setTimeout(() => {
+            this.applyLanguage(this.currentLang);
+            this.setupEventListeners();
+        }, 100);
     }
 
     async loadTranslations() {
         try {
-            const [ar, en] = await Promise.all([
-                fetch('assets/lang/ar.json').then(r => r.json()),
-                fetch('assets/lang/en.json').then(r => r.json())
+            const [arResponse, enResponse] = await Promise.all([
+                fetch('assets/lang/ar.json'),
+                fetch('assets/lang/en.json')
             ]);
+            
+            if (!arResponse.ok || !enResponse.ok) {
+                throw new Error('Failed to load translation files');
+            }
+            
+            const [ar, en] = await Promise.all([
+                arResponse.json(),
+                enResponse.json()
+            ]);
+            
             this.translations = { ar, en };
+            console.log('Translations loaded successfully');
         } catch (error) {
             console.error('Error loading translations:', error);
+            // Fallback: try to load from relative path
+            try {
+                const [ar, en] = await Promise.all([
+                    fetch('./assets/lang/ar.json').then(r => r.json()),
+                    fetch('./assets/lang/en.json').then(r => r.json())
+                ]);
+                this.translations = { ar, en };
+                console.log('Translations loaded from relative path');
+            } catch (fallbackError) {
+                console.error('Failed to load translations from fallback path:', fallbackError);
+            }
         }
     }
 
@@ -36,16 +61,36 @@ class LanguageManager {
     }
 
     applyLanguage(lang) {
+        if (!this.translations[lang]) {
+            console.warn(`Translations for ${lang} not loaded yet. Retrying...`);
+            // Retry after a short delay
+            setTimeout(() => {
+                if (this.translations[lang]) {
+                    this.applyLanguage(lang);
+                }
+            }, 200);
+            return;
+        }
+        
+        console.log(`Applying language: ${lang}`);
         this.currentLang = lang;
         document.documentElement.lang = lang;
         document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
         
         // Update all elements with data-i18n attribute
-        document.querySelectorAll('[data-i18n]').forEach(el => {
+        const elements = document.querySelectorAll('[data-i18n]');
+        console.log(`Found ${elements.length} elements with data-i18n attribute`);
+        
+        elements.forEach(el => {
             const key = el.getAttribute('data-i18n');
+            if (!key) return;
+            
             const text = this.getText(key);
             
-            if (!text || text === key) return; // Skip if translation not found
+            if (!text || text === key) {
+                // Don't log warnings for every missing translation to avoid console spam
+                return;
+            }
             
             if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
                 el.placeholder = text;
@@ -91,13 +136,22 @@ class LanguageManager {
     }
 
     setupEventListeners() {
-        document.getElementById('lang-ar')?.addEventListener('click', () => {
-            this.applyLanguage('ar');
-        });
+        const langArBtn = document.getElementById('lang-ar');
+        const langEnBtn = document.getElementById('lang-en');
         
-        document.getElementById('lang-en')?.addEventListener('click', () => {
-            this.applyLanguage('en');
-        });
+        if (langArBtn) {
+            langArBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.applyLanguage('ar');
+            });
+        }
+        
+        if (langEnBtn) {
+            langEnBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.applyLanguage('en');
+            });
+        }
     }
 
     switchLanguage(lang) {
