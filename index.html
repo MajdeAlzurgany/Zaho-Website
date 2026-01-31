@@ -253,6 +253,12 @@
                 transform: scale(0.8);
             }
         }
+
+        /* Scroll animation helper */
+        .scroll-hidden {
+            opacity: 0;
+            transform: translateY(20px);
+        }
     </style>
 </head>
 
@@ -287,7 +293,7 @@
                         data-i18n="nav.about">من نحن</a>
                     <a href="#hawelli"
                         class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg"
-                        data-i18n="nav.hawelli">حولي</a>
+                        data-i18n="nav.hawelli">حوّلي</a>
                     <a href="#services"
                         class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg"
                         data-i18n="nav.services">الخدمات</a>
@@ -334,7 +340,7 @@
                     data-i18n="nav.about">من نحن</a>
                 <a href="#hawelli"
                     class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg"
-                    data-i18n="nav.hawelli">حولي</a>
+                    data-i18n="nav.hawelli">حوّلي</a>
                 <a href="#services"
                     class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg"
                     data-i18n="nav.services">الخدمات</a>
@@ -349,7 +355,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="relative gradient-bg text-white overflow-hidden">
+    <section id="home" class="relative gradient-bg text-white overflow-hidden animate-on-scroll scroll-hidden">
         <div class="absolute inset-0 bg-black/5"></div>
         <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl">
         </div>
@@ -369,7 +375,7 @@
                         <a href="https://hawelli.zaho.ly" target="_blank"
                             class="inline-flex items-center justify-center bg-white text-primary-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition shadow-xl hover:shadow-2xl transform hover:-translate-y-1 space-x-2 rtl:space-x-reverse">
                             <i class="fas fa-rocket"></i>
-                            <span data-i18n="hero.cta1">اكتشف حولي</span>
+                            <span data-i18n="hero.cta1">اكتشف حوّلي</span>
                         </a>
                         <a href="#about"
                             class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition space-x-2 rtl:space-x-reverse">
@@ -395,7 +401,7 @@
                             </div>
                             
                             <!-- Main image container with modern styling -->
-                            <div class="relative w-full h-full bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center overflow-hidden shadow-2xl p-1 transition-all duration-500 hover:scale-105 hover:shadow-primary-500/30 hover:shadow-3xl">
+                            <div class="relative w-full h-full bg-white rounded-full flex items-center justify-center overflow-hidden shadow-2xl p-1 transition-all duration-500 hover:scale-105 hover:shadow-primary-500/30 hover:shadow-3xl">
                                 <!-- Image with modern effects -->
                                 <img src="assets/images/zaho-logo.png" 
                                     alt="Zaho Digital Solutions"
@@ -416,7 +422,7 @@
         </div>
     </section>
     <!-- About Section -->
-    <section id="about" class="section-padding bg-gray-50 dark:bg-gray-800">
+    <section id="about" class="section-padding bg-gray-50 dark:bg-gray-800 animate-on-scroll scroll-hidden">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="about.title">من
@@ -554,7 +560,7 @@
     </section>
 
     <!-- Main Product Section -->
-    <section id="hawelli" class="section-padding bg-white dark:bg-gray-900">
+    <section id="hawelli" class="section-padding bg-white dark:bg-gray-900 animate-on-scroll scroll-hidden">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="hawelli.title">
@@ -573,18 +579,18 @@
                                     <img src="assets/images/image.png" alt="Hawelli Logo" class="w-full h-full object-contain">
                                 </div>
                                 <div>
-                                    <h4 class="text-2xl font-bold text-gray-800 dark:text-white">محفظة حولي</h4>
-                                    <p class="text-gray-600 dark:text-gray-400">المحفظة الإلكترونية الرائدة</p>
+                                    <h4 class="text-2xl font-bold text-gray-800 dark:text-white" data-i18n="hawelli.ctaTitle">محفظة حوّلي</h4>
+                                    <p class="text-gray-600 dark:text-gray-400" data-i18n="hawelli.ctaDesc">المحفظة الإلكترونية الرائدة</p>
                                 </div>
                             </div>
-                            <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                                اكتشف محفظة حولي، المحفظة الإلكترونية المتطورة التي تتيح لك إدارة أموالك بسهولة وأمان تام. حلول دفع مبتكرة تلبي احتياجاتك اليومية.
+                            <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed" data-i18n="hawelli.description">
+                                اكتشف محفظة حوّلي، المحفظة الإلكترونية المتطورة التي تتيح لك إدارة أموالك بسهولة وأمان تام. حلول دفع مبتكرة تلبي احتياجاتك اليومية.
                             </p>
                             <div class="text-center">
                                 <a href="https://hawelli.zaho.ly" target="_blank"
                                     class="inline-flex items-center justify-center bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-primary-700 hover:to-secondary-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 space-x-3 rtl:space-x-reverse">
                                     <i class="fas fa-external-link-alt text-xl"></i>
-                                    <span>اكتشف حوّلي</span>
+                                    <span data-i18n="hawelli.ctaButton">اكتشف حوّلي</span>
                                 </a>
                             </div>
                         </div>
@@ -595,7 +601,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section-padding bg-gray-50 dark:bg-gray-800">
+    <section id="services" class="section-padding bg-gray-50 dark:bg-gray-800 animate-on-scroll scroll-hidden">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white"
@@ -688,7 +694,7 @@
     </section>
 
     <!-- Solutions by Sector -->
-    <section id="solutions" class="section-padding bg-white dark:bg-gray-900">
+    <section id="solutions" class="section-padding bg-white dark:bg-gray-900 animate-on-scroll scroll-hidden">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white"
@@ -755,7 +761,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-gray-50 dark:bg-gray-800">
+    <section id="contact" class="section-padding bg-gray-50 dark:bg-gray-800 animate-on-scroll scroll-hidden">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="contact.title">
@@ -828,7 +834,7 @@
                                     <div>
                                         <p class="font-semibold text-gray-800 dark:text-white mb-1"
                                             data-i18n="contact.emailLabel">البريد الإلكتروني</p>
-                                        <a href="mailto:info@zaho.ly"
+                                        <a href="mailto:contact@zaho.ly"
                                             class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">contact@zaho.ly</a>
                                     </div>
                                 </div>
@@ -858,7 +864,7 @@
                                     <div>
                                         <p class="font-semibold text-gray-800 dark:text-white mb-1"
                                             data-i18n="contact.addressLabel">مقر الشركة</p>
-                                        <p class="text-gray-700 dark:text-gray-300">جنزور – طرابلس – ليبيا</p>
+                                        <p class="text-gray-700 dark:text-gray-300" data-i18n="contact.addressValue">جنزور – طرابلس – ليبيا</p>
                                     </div>
                                 </div>
                             </div>
@@ -867,14 +873,14 @@
                         <!-- CTA Card -->
                         <div
                             class="bg-gradient-to-br from-primary-600 to-secondary-600 text-white p-8 rounded-3xl shadow-2xl">
-                            <h4 class="text-xl font-bold mb-4" data-i18n="contact.ctaTitle">ابدأ رحلتك مع حولي اليوم
+                            <h4 class="text-xl font-bold mb-4" data-i18n="contact.ctaTitle">ابدأ رحلتك مع حوّلي اليوم
                             </h4>
                             <p class="mb-6 text-white/90" data-i18n="contact.ctaDesc">اكتشف المحفظة الإلكترونية التي
                                 ستغير طريقة تعاملك مع المال</p>
                             <a href="https://hawelli.zaho.ly" target="_blank"
                                 class="inline-flex items-center justify-center bg-white text-primary-600 px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition shadow-lg space-x-2 rtl:space-x-reverse">
                                 <i class="fas fa-rocket"></i>
-                                <span data-i18n="contact.ctaButton">اكتشف حولي</span>
+                                <span data-i18n="contact.ctaButton">اكتشف حوّلي</span>
                             </a>
                         </div>
                     </div>
@@ -905,7 +911,7 @@
                     <h4 class="text-lg font-semibold mb-4" data-i18n="footer.quickLinks">روابط سريعة</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="#about" class="hover:text-white transition" data-i18n="nav.about">من نحن</a></li>
-                        <li><a href="#hawelli" class="hover:text-white transition" data-i18n="nav.hawelli">حولي</a></li>
+                        <li><a href="#hawelli" class="hover:text-white transition" data-i18n="nav.hawelli">حوّلي</a></li>
                         <li><a href="#services" class="hover:text-white transition" data-i18n="nav.services">الخدمات</a>
                         </li>
                         <li><a href="#solutions" class="hover:text-white transition"
@@ -919,7 +925,7 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4" data-i18n="footer.policies">السياسات</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="https://pricacy-policy.zaho.ly" class="hover:text-white transition" data-i18n="footer.privacyPolicy">Privacy Policy</a></li>
+                        <li><a href="https://privacy-policy.zaho.ly" class="hover:text-white transition" data-i18n="footer.privacyPolicy">Privacy Policy</a></li>
                     </ul>
                 </div>
 
@@ -927,20 +933,9 @@
                 <div>
                     <h4 class="text-lg font-semibold mb-4" data-i18n="footer.followUs">تابعنا</h4>
                     <div class="flex space-x-3 rtl:space-x-reverse">
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-primary-600 transition">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-blue-400 transition">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-pink-600 transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-blue-700 transition">
+                        <a href="https://www.linkedin.com/company/zaho-ly/" target="_blank" rel="noopener"
+                            class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-blue-700 transition"
+                            aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
@@ -968,6 +963,7 @@
     <script src="assets/js/modules/language.js"></script>
     <script src="assets/js/modules/theme.js"></script>
     <script src="assets/js/modules/navigation.js"></script>
+    <script src="assets/js/modules/scrollAnimations.js"></script>
     <script src="assets/js/modules/contactForm.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
