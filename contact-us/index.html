@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - Zaho</title>
+    <link rel="icon" type="image/png" href="../assets/images/zaho-logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cairo', 'Inter', sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(7, 89, 133, 0.1);
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, #0ea5e9, #22c55e);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .icon-container {
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .icon-container {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
+        }
+
+        .feature-card:hover .icon-container i {
+            color: white;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(34, 197, 94, 0.1) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-illustration {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .wave-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f8fafc' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: cover;
+        }
+
+        .dark .wave-bg {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231f2937' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+        }
+
+        .app-download-btn {
+            transition: all 0.3s ease;
+        }
+
+        .app-download-btn:hover {
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
+        }
+
+        .stats-counter {
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #0ea5e9, #22c55e);
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #0369a1, #15803d);
+        }
+    </style>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Contact Section (extracted from main index.html) -->
+    <section id="contact" class="section-padding bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="contact.title">
+                    اتصل بنا</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded"></div>
+                <p class="text-gray-600 dark:text-gray-400 mt-6 text-lg max-w-2xl mx-auto" data-i18n="contact.subtitle">
+                    نحن هنا لمساعدتك في أي استفسار أو طلب</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-xl">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white"
+                            data-i18n="contact.sendMessage">أرسل رسالة</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1 text-sm"
+                                        data-i18n="contact.name">الاسم</label>
+                                    <input type="text" name="user_name" required
+                                        class="w-full px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-200 dark:focus:ring-primary-800 transition text-sm">
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1 text-sm"
+                                        data-i18n="contact.email">البريد الإلكتروني</label>
+                                    <input type="email" name="user_email" required
+                                        class="w-full px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-200 dark:focus:ring-primary-800 transition text-sm">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1 text-sm"
+                                    data-i18n="contact.subject">الموضوع</label>
+                                <input type="text" name="subject" required
+                                    class="w-full px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-200 dark:focus:ring-primary-800 transition text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1 text-sm"
+                                    data-i18n="contact.message">الرسالة</label>
+                                <textarea name="message" rows="3" required
+                                    class="w-full px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-200 dark:focus:ring-primary-800 transition text-sm"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold py-3 px-4 rounded-lg transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-sm">
+                                <i class="fas fa-paper-plane ml-2"></i>
+                                <span data-i18n="contact.send">إرسال الرسالة</span>
+                            </button>
+                        </form>
+                        <div id="form-message" class="mt-4 hidden"></div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="space-y-6">
+                        <!-- Info Card -->
+                        <div
+                            class="bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-600">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white"
+                                data-i18n="contact.contactInfo">معلومات الاتصال</h3>
+                            <div class="space-y-5">
+                                <!-- Email -->
+                                <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                    <div
+                                        class="flex-shrink-0 w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center">
+                                        <i class="fas fa-envelope text-primary-600 dark:text-primary-400 text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 dark:text-white mb-1"
+                                            data-i18n="contact.emailLabel">البريد الإلكتروني</p>
+                                        <a href="mailto:info@zaho.ly"
+                                            class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">contact@zaho.ly</a>
+                                    </div>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                    <div
+                                        class="flex-shrink-0 w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-xl flex items-center justify-center">
+                                        <i
+                                            class="fas fa-phone-alt text-secondary-600 dark:text-secondary-400 text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 dark:text-white mb-1"
+                                            data-i18n="contact.phoneLabel">الهاتف</p>
+                                        <a href="tel:0912615455"
+                                            class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">0912615455</a>
+                                    </div>
+                                </div>
+
+                                <!-- Address -->
+                                <div class="flex items-start space-x-4 rtl:space-x-reverse">
+                                    <div
+                                        class="flex-shrink-0 w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-xl flex items-center justify-center">
+                                        <i
+                                            class="fas fa-map-marker-alt text-secondary-600 dark:text-secondary-400 text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-800 dark:text-white mb-1"
+                                            data-i18n="contact.addressLabel">مقر الشركة</p>
+                                        <p class="text-gray-700 dark:text-gray-300">جنزور – طرابلس – ليبيا</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Card -->
+                        <div
+                            class="bg-gradient-to-br from-primary-600 to-secondary-600 text-white p-8 rounded-3xl shadow-2xl">
+                            <h4 class="text-xl font-bold mb-4" data-i18n="contact.ctaTitle">ابدأ رحلتك مع حولي اليوم
+                            </h4>
+                            <p class="mb-6 text-white/90" data-i18n="contact.ctaDesc">اكتشف المحفظة الإلكترونية التي
+                                ستغير طريقة تعاملك مع المال</p>
+                            <a href="https://hawelli.zaho.ly" target="_blank"
+                                class="inline-flex items-center justify-center bg-white text-primary-600 px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition shadow-lg space-x-2 rtl:space-x-reverse">
+                                <i class="fas fa-rocket"></i>
+                                <span data-i18n="contact.ctaButton">اكتشف حولي</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include necessary scripts (paths adjusted for subfolder) -->
+    <script src="../assets/js/modules/language.js"></script>
+    <script src="../assets/js/modules/theme.js"></script>
+    <script src="../assets/js/modules/navigation.js"></script>
+    <script src="../assets/js/modules/contactForm.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.getElementById('current-year')?.textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-// Dark/Light Theme Management Module
+// Dark/Light Theme Management Module - Updated for FontAwesome
 class ThemeManager {
     constructor() {
         this.currentTheme = localStorage.getItem('theme') || 'light';
@@ -15,24 +15,17 @@ class ThemeManager {
         document.documentElement.classList.remove('light', 'dark');
         document.documentElement.classList.add(theme);
         
-        // Update theme toggle button
+        // Update theme toggle button with FontAwesome icons
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
-            const icon = themeToggle.querySelector('svg');
             if (theme === 'dark') {
                 // Show sun icon (light mode)
-                if (icon) {
-                    icon.innerHTML = `
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M17.657 17.657l-.707.707M12 5.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13z" />
-                    `;
-                }
+                themeToggle.innerHTML = '<i class="fas fa-sun text-lg"></i>';
+                themeToggle.setAttribute('title', 'Switch to light mode');
             } else {
                 // Show moon icon (dark mode)
-                if (icon) {
-                    icon.innerHTML = `
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    `;
-                }
+                themeToggle.innerHTML = '<i class="fas fa-moon text-lg"></i>';
+                themeToggle.setAttribute('title', 'Switch to dark mode');
             }
         }
 
@@ -53,5 +46,6 @@ class ThemeManager {
 }
 
 // Export for use in other modules
-window.ThemeManager = ThemeManager;
-
+if (typeof window !== 'undefined') {
+    window.ThemeManager = ThemeManager;
+}

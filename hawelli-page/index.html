@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محفظة حولّي – Hawelli</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #4F6BFF;
+  --deep: #2F3CFF;
+  --accent: #00C2FF;
+  --bg: #F5F7FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: #0f172a;
+  line-height: 1.8;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, var(--deep), var(--primary), var(--accent));
+  color: #fff;
+  padding: 120px 20px 80px;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ===== COMING SOON BADGE (Big & Centered) ===== */
+.coming-soon {
+  display: block;
+  margin: 0 auto 25px; /* centered horizontally */
+  padding: 15px 50px; /* bigger & wide */
+  border-radius: 999px;
+  font-size: 2.5rem; /* bigger text */
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #ffffff, #dbe7ff, #ffffff);
+  color: var(--deep);
+  animation: pulseGlow 2.8s ease-in-out infinite;
+  text-align: center;
+  box-shadow: 0 0 0 rgba(255,255,255,0.6);
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255,255,255,0.6);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px 10px rgba(255,255,255,0.35);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255,255,255,0.6);
+  }
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin-bottom: 35px;
+  opacity: 0.95;
+}
+
+/* ===== BUTTONS ===== */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-buttons a {
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #fff;
+  color: var(--deep);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hero-buttons a.secondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.5);
+}
+
+.hero-buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* ===== LOGO MOCKUP ===== */
+.phone {
+  text-align: center;
+}
+
+.phone img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.35));
+}
+
+/* ===== SECTIONS ===== */
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 90px 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 55px;
+  color: var(--deep);
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  margin: 18px auto 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--deep), var(--accent));
+}
+
+/* ===== FEATURES ===== */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.feature {
+  background: #fff;
+  padding: 40px;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(79,107,255,0.15);
+  text-align: center;
+}
+
+.feature strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: linear-gradient(135deg, #1f2bff, #4F6BFF);
+  color: #fff;
+  padding: 80px 20px 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+}
+
+.footer h3 {
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+
+.footer p {
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  margin-top: 45px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.25);
+  text-align: center;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* ===== LANGUAGE TOGGLE ===== */
+.lang-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #fff;
+  color: var(--deep);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.lang-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .coming-soon {
+    font-size: 1.6rem;
+    padding: 12px 35px;
+  }
+
+  .lang-toggle {
+    top: 10px;
+    left: 10px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LANGUAGE TOGGLE -->
+<button class="lang-toggle" id="langToggle">English</button>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-container">
+    <div>
+      <div class="coming-soon" id="comingSoon">قريباً</div>
+      <h1 id="heroTitle">محفظة حولّي</h1>
+      <p id="heroDesc">إدارة أموالك بسهولة وأمان — كل خدماتك المالية في تطبيق واحد</p>
+
+      <div class="hero-buttons">
+        <a href="hawelli-link.html" id="heroBtn1">تحميل التطبيق</a>
+        <a class="secondary" id="heroBtn2">اكتشف المزايا</a>
+      </div>
+    </div>
+
+    <div class="phone">
+      <img src="image.png" alt="EC8BC5BF-9DF8-4B8D-AE9A-2D6C2D4E2D33.jpeg">
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <h2>ماذا يقدم لك حولّي؟</h2>
+
+  <div class="features">
+    <div class="feature">
+      <strong>دفع ذكي</strong>
+      QR – NFC – رقم الهاتف
+    </div>
+
+    <div class="feature">
+      <strong>أمان عالي</strong>
+      حماية ومعايير مصرفية
+    </div>
+
+    <div class="feature">
+      <strong>حلول أعمال</strong>
+      تحصيل مدفوعات وتقارير فورية
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div>
+      <h3>محفظة حولّي</h3>
+      <p>Powered by Zaho</p>
+      <p>مرخص من قبل مصرف ليبيا المركزي</p>
+    </div>
+
+    <div>
+      <h3>التواصل</h3>
+      <p>contact@zaho.ly</p>
+      <p>0912431111</p>
+    </div>
+
+    <div>
+      <h3>العنوان</h3>
+      <p>جنزور – طرابلس</p>
+      <p>ليبيا</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Zaho – جميع الحقوق محفوظة
+  </div>
+</footer>
+
+<script>
+// ===== LANGUAGE TOGGLE FUNCTION =====
+const langToggle = document.getElementById('langToggle');
+let isArabic = true;
+
+langToggle.addEventListener('click', () => {
+  if (isArabic) {
+    document.documentElement.lang = 'en';
+    document.documentElement.dir = 'ltr';
+    document.getElementById('comingSoon').textContent = "Coming Soon";
+    document.getElementById('heroTitle').textContent = "Hawelli Wallet";
+    document.getElementById('heroDesc').textContent = "Manage your money easily and safely — all your financial services in one app";
+    document.getElementById('heroBtn1').textContent = "Download App";
+    document.getElementById('heroBtn2').textContent = "Explore Features";
+    langToggle.textContent = "العربية";
+    isArabic = false;
+  } else {
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+    document.getElementById('comingSoon').textContent = "قريباً";
+    document.getElementById('heroTitle').textContent = "محفظة حولّي";
+    document.getElementById('heroDesc').textContent = "إدارة أموالك بسهولة وأمان — كل خدماتك المالية في تطبيق واحد";
+    document.getElementById('heroBtn1').textContent = "تحميل التطبيق";
+    document.getElementById('heroBtn2').textContent = "اكتشف المزايا";
+    langToggle.textContent = "English";
+    isArabic = true;
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

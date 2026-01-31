@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zaho - فلوسك في تليفونك / Your Money in Your Phone</title>
+    <title>Zaho - لخدمات الدفع الالكتروني</title>
     <link rel="icon" type="image/png" href="assets/images/zaho-logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -67,51 +68,53 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         * {
             font-family: 'Cairo', 'Inter', sans-serif;
         }
-        
+
         body {
             overflow-x: hidden;
             scroll-behavior: smooth;
         }
-        
+
         .gradient-bg {
             background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .card-hover {
             transition: all 0.3s ease;
         }
-        
+
         .card-hover:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(7, 89, 133, 0.1);
         }
-        
+
         .section-padding {
             padding: 5rem 0;
         }
-        
+
         @media (max-width: 768px) {
             .section-padding {
                 padding: 3rem 0;
             }
         }
-        
+
         .nav-link {
             position: relative;
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -122,91 +125,95 @@
             background: linear-gradient(to right, #0ea5e9, #22c55e);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .icon-container {
             transition: all 0.3s ease;
         }
-        
+
         .feature-card:hover .icon-container {
             transform: scale(1.1);
             background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
         }
-        
+
         .feature-card:hover .icon-container i {
             color: white;
         }
-        
+
         .stat-card {
             background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(34, 197, 94, 0.1) 100%);
             backdrop-filter: blur(10px);
         }
-        
+
         .hero-illustration {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         .wave-bg {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23f8fafc' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
             background-repeat: no-repeat;
             background-position: bottom;
             background-size: cover;
         }
-        
+
         .dark .wave-bg {
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%231f2937' fill-opacity='1' d='M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
         }
-        
+
         .app-download-btn {
             transition: all 0.3s ease;
         }
-        
+
         .app-download-btn:hover {
             box-shadow: 0 10px 25px rgba(14, 165, 233, 0.3);
         }
-        
+
         .stats-counter {
             font-feature-settings: "tnum";
             font-variant-numeric: tabular-nums;
         }
-        
+
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
-        
+
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
-        
+
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(to bottom, #0ea5e9, #22c55e);
             border-radius: 4px;
         }
-        
+
         .dark ::-webkit-scrollbar-track {
             background: #1f2937;
         }
-        
+
         .dark ::-webkit-scrollbar-thumb {
             background: linear-gradient(to bottom, #0369a1, #15803d);
         }
     </style>
 </head>
+
 <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
     <!-- Header -->
-    <header class="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100 dark:border-gray-800">
+    <header
+        class="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100 dark:border-gray-800">
         <nav class="container mx-auto px-4 py-3 lg:py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="#home" class="flex items-center space-x-3 rtl:space-x-reverse">
-                        <img src="assets/images/zaho-logo.png" alt="Zaho Logo" class="h-12 md:h-14 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <img src="assets/images/zaho-logo.png" alt="Zaho Logo" class="h-12 md:h-14 w-auto"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="hidden items-center space-x-2 rtl:space-x-reverse">
-                            <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center shadow-md">
+                            <div
+                                class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center shadow-md">
                                 <i class="fas fa-wallet text-white text-lg"></i>
                             </div>
                             <span class="text-2xl md:text-3xl font-bold gradient-text">ZAHO</span>
@@ -216,26 +223,43 @@
 
                 <!-- Desktop Navbar -->
                 <div class="hidden lg:flex items-center space-x-10 rtl:space-x-reverse">
-                    <a href="#home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg" data-i18n="nav.home">الرئيسية</a>
-                    <a href="#about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg" data-i18n="nav.about">من نحن</a>
-                    <a href="#hawelli" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg" data-i18n="nav.hawelli">حولي</a>
-                    <a href="#services" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg" data-i18n="nav.services">الخدمات</a>
-                    <a href="#solutions" class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg" data-i18n="nav.solutions">الحلول</a>
-                    <a href="#contact" class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-5 py-2.5 rounded-xl hover:from-primary-700 hover:to-secondary-700 transition font-medium text-lg shadow-md hover:shadow-lg" data-i18n="nav.contact">اتصل بنا</a>
+                    <a href="#home"
+                        class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg"
+                        data-i18n="nav.home">الرئيسية</a>
+                    <a href="#about"
+                        class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg"
+                        data-i18n="nav.about">من نحن</a>
+                    <a href="#hawelli"
+                        class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg"
+                        data-i18n="nav.hawelli">حولي</a>
+                    <a href="#services"
+                        class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg"
+                        data-i18n="nav.services">الخدمات</a>
+                    <a href="#solutions"
+                        class="nav-link text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition font-medium text-lg"
+                        data-i18n="nav.solutions">الحلول</a>
+                    <a href="#contact"
+                        class="bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-5 py-2.5 rounded-xl hover:from-primary-700 hover:to-secondary-700 transition font-medium text-lg shadow-md hover:shadow-lg"
+                        data-i18n="nav.contact">اتصل بنا</a>
                 </div>
 
                 <!-- Controls -->
                 <div class="flex items-center space-x-4 rtl:space-x-reverse">
                     <!-- Theme Toggle -->
-                    <button id="theme-toggle" class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition shadow-sm">
+                    <button id="theme-toggle"
+                        class="p-2.5 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition shadow-sm">
                         <i class="fas fa-moon text-lg"></i>
                     </button>
                     <!-- Language Switcher -->
                     <div class="flex items-center space-x-2 rtl:space-x-reverse">
-                        <button id="lang-ar" class="lang-btn px-4 py-2 rounded-xl bg-gray-100 text-gray-700 text-sm font-medium shadow-sm" data-lang="ar">
+                        <button id="lang-ar"
+                            class="lang-btn px-4 py-2 rounded-xl bg-gray-100 text-gray-700 text-sm font-medium shadow-sm"
+                            data-lang="ar">
                             العربية
                         </button>
-                        <button id="lang-en" class="lang-btn px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium" data-lang="en">English</button>
+                        <button id="lang-en"
+                            class="lang-btn px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-sm font-medium"
+                            data-lang="en">English</button>
                     </div>
                     <!-- Mobile Menu Button -->
                     <button id="mobile-menu-btn" class="lg:hidden text-gray-700 dark:text-gray-300 p-2">
@@ -246,12 +270,24 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden lg:hidden mt-4 pb-4 space-y-3">
-                <a href="#home" class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg" data-i18n="nav.home">الرئيسية</a>
-                <a href="#about" class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg" data-i18n="nav.about">من نحن</a>
-                <a href="#hawelli" class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg" data-i18n="nav.hawelli">حولي</a>
-                <a href="#services" class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg" data-i18n="nav.services">الخدمات</a>
-                <a href="#solutions" class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg" data-i18n="nav.solutions">الحلول</a>
-                <a href="#contact" class="block py-3 px-4 rounded-xl bg-gradient-to-r from-primary-600 to-secondary-600 text-white hover:from-primary-700 hover:to-secondary-700 text-lg" data-i18n="nav.contact">اتصل بنا</a>
+                <a href="#home"
+                    class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg"
+                    data-i18n="nav.home">الرئيسية</a>
+                <a href="#about"
+                    class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg"
+                    data-i18n="nav.about">من نحن</a>
+                <a href="#hawelli"
+                    class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg"
+                    data-i18n="nav.hawelli">حولي</a>
+                <a href="#services"
+                    class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg"
+                    data-i18n="nav.services">الخدمات</a>
+                <a href="#solutions"
+                    class="block py-3 px-4 rounded-xl nav-link hover:bg-gray-50 dark:hover:bg-gray-800 text-lg"
+                    data-i18n="nav.solutions">الحلول</a>
+                <a href="#contact"
+                    class="block py-3 px-4 rounded-xl bg-gradient-to-r from-primary-600 to-secondary-600 text-white hover:from-primary-700 hover:to-secondary-700 text-lg"
+                    data-i18n="nav.contact">اتصل بنا</a>
             </div>
         </nav>
     </header>
@@ -259,137 +295,156 @@
     <!-- Hero Section -->
     <section id="home" class="relative gradient-bg text-white overflow-hidden">
         <div class="absolute inset-0 bg-black/5"></div>
-        <div class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
-        
+        <div
+            class="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl">
+        </div>
+
         <div class="container mx-auto px-4 py-16 md:py-24 relative z-10">
             <div class="flex flex-col lg:flex-row items-center justify-between">
                 <div class="lg:w-1/2 mb-12 lg:mb-0 text-center lg:text-right">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in" data-i18n="hero.title">فلوسك في تليفونك</h1>
-                    <p class="text-xl md:text-2xl mb-10 text-white/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-slide-up" data-i18n="hero.subtitle">زاهو - شركة مختصة في الحلول الرقمية المبتكرة والخدمات المالية الإلكترونية</p>
-                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight animate-fade-in"
+                        data-i18n="hero.title">مستقبل الدفع الرقمي</h1>
+                    <p class="text-xl md:text-2xl mb-10 text-white/90 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-slide-up"
+                        data-i18n="hero.subtitle">زاهو - شركة مختصة في الحلول الرقمية المبتكرة والخدمات المالية
+                        الإلكترونية</p>
+
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-slide-up">
-                        <a href="https://hawelli.ly" target="_blank" class="inline-flex items-center justify-center bg-white text-primary-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition shadow-xl hover:shadow-2xl transform hover:-translate-y-1 space-x-2 rtl:space-x-reverse">
+                        <a href="https://hawelli.zaho.ly" target="_blank"
+                            class="inline-flex items-center justify-center bg-white text-primary-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition shadow-xl hover:shadow-2xl transform hover:-translate-y-1 space-x-2 rtl:space-x-reverse">
                             <i class="fas fa-rocket"></i>
                             <span data-i18n="hero.cta1">اكتشف حولي</span>
                         </a>
-                        <a href="#about" class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition space-x-2 rtl:space-x-reverse">
+                        <a href="#about"
+                            class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition space-x-2 rtl:space-x-reverse">
                             <i class="fas fa-info-circle"></i>
                             <span data-i18n="hero.cta2">اعرف المزيد</span>
                         </a>
                     </div>
-                    
-                    <!-- Stats -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl md:text-3xl font-bold stats-counter">+50K</div>
-                            <div class="text-sm text-white/80" data-i18n="hero.stats1">مستخدم</div>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl md:text-3xl font-bold stats-counter">+100M</div>
-                            <div class="text-sm text-white/80" data-i18n="hero.stats2">معاملة</div>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl md:text-3xl font-bold stats-counter">+500</div>
-                            <div class="text-sm text-white/80" data-i18n="hero.stats3">تاجر</div>
-                        </div>
-                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
-                            <div class="text-2xl md:text-3xl font-bold stats-counter">24/7</div>
-                            <div class="text-sm text-white/80" data-i18n="hero.stats4">دعم فني</div>
-                        </div>
-                    </div>
+
                 </div>
-                
+
                 <div class="lg:w-1/2 flex justify-center items-center">
                     <div class="relative hero-illustration">
-                        <div class="w-64 h-64 md:w-72 md:h-72 bg-white rounded-full flex items-center justify-center shadow-2xl p-3">
-                            <div class="w-full h-full bg-transparent rounded-2xl flex items-center justify-center overflow-hidden p-4">
-                                <img src="assets/images/image.png" alt="Hawelli Logo" class="w-full h-full object-contain max-w-[200px] md:max-w-[240px]">
+                        <div
+                            class="w-64 h-64 md:w-72 md:h-72 bg-white rounded-full flex items-center justify-center shadow-2xl p-8">
+                            <div
+                                class="w-full h-full bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center overflow-hidden">
+                                <i class="fas fa-wallet text-white text-6xl md:text-7xl"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Wave Divider -->
         <div class="wave-bg h-24 -mb-1"></div>
     </section>
-
     <!-- About Section -->
     <section id="about" class="section-padding bg-gray-50 dark:bg-gray-800">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="about.title">من نحن – شركة زاهو</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="about.title">من
+                    نحن – شركة زاهو</h2>
                 <div class="w-24 h-1.5 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded"></div>
-                <p class="text-gray-600 dark:text-gray-400 mt-6 text-lg max-w-2xl mx-auto" data-i18n="about.subtitle">شركة رائدة في مجال الحلول المالية الرقمية في ليبيا</p>
+                <p class="text-gray-600 dark:text-gray-400 mt-6 text-lg max-w-2xl mx-auto" data-i18n="about.subtitle">
+                    شركة رائدة في مجال الحلول المالية الرقمية في ليبيا</p>
             </div>
-            
+
             <div class="max-w-5xl mx-auto">
-                <div class="bg-white dark:bg-gray-700 rounded-3xl p-8 md:p-12 mb-12 shadow-xl card-hover animate-slide-up">
+                <div
+                    class="bg-white dark:bg-gray-700 rounded-3xl p-8 md:p-12 mb-12 shadow-xl card-hover animate-slide-up">
                     <div class="flex items-start space-x-4 rtl:space-x-reverse mb-6">
-                        <div class="icon-container w-14 h-14 bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900/30 dark:to-secondary-900/30 rounded-2xl flex items-center justify-center flex-shrink-0">
+                        <div
+                            class="icon-container w-14 h-14 bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-primary-900/30 dark:to-secondary-900/30 rounded-2xl flex items-center justify-center flex-shrink-0">
                             <i class="fas fa-briefcase text-primary-600 dark:text-primary-400 text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-2xl md:text-3xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="about.descriptionTitle">زاهو للخدمات المالية الرقمية</h3>
-                            <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="about.description">زاهو هي احد الشركات المختصة في مجال الحلول الرقمية المبتكرة والخدمات المالية الإلكترونية، نقدم حلولاً مالية آمنة وسهلة تلائم السوق الليبي وتواكب التطور التكنولوجي العالمي.</p>
+                            <h3 class="text-2xl md:text-3xl font-bold mb-3 text-gray-800 dark:text-white"
+                                data-i18n="about.descriptionTitle">زاهو للخدمات المالية الرقمية</h3>
+                            <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
+                                data-i18n="about.description">زاهو هي احد الشركات المختصة في مجال الحلول الرقمية
+                                المبتكرة والخدمات المالية الإلكترونية، نقدم حلولاً مالية آمنة وسهلة تلائم السوق الليبي
+                                وتواكب التطور التكنولوجي العالمي.</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- What Makes Us Special -->
                 <div class="mb-16">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 dark:text-white text-center" data-i18n="about.whatMakesUsSpecial">ما يميزنا</h3>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 dark:text-white text-center"
+                        data-i18n="about.whatMakesUsSpecial">ما يميزنا</h3>
                     <div class="grid md:grid-cols-2 gap-6">
                         <!-- Feature 1 -->
-                        <div class="feature-card bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600 card-hover">
+                        <div
+                            class="feature-card bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600 card-hover">
                             <div class="flex items-start space-x-4 rtl:space-x-reverse">
-                                <div class="icon-container w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="icon-container w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-shield-alt text-primary-600 dark:text-primary-400 text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-bold mb-2 text-gray-800 dark:text-white" data-i18n="about.specialTitle1">حلول آمنة</h4>
-                                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="about.special1">حلول رقمية تلائم السوق الليبي مع أعلى معايير الأمان</p>
+                                    <h4 class="text-lg font-bold mb-2 text-gray-800 dark:text-white"
+                                        data-i18n="about.specialTitle1">حلول آمنة</h4>
+                                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed"
+                                        data-i18n="about.special1">حلول رقمية تلائم السوق الليبي مع أعلى معايير الأمان
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Feature 2 -->
-                        <div class="feature-card bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600 card-hover">
+                        <div
+                            class="feature-card bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600 card-hover">
                             <div class="flex items-start space-x-4 rtl:space-x-reverse">
-                                <div class="icon-container w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="icon-container w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-users text-secondary-600 dark:text-secondary-400 text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-bold mb-2 text-gray-800 dark:text-white" data-i18n="about.specialTitle2">فريق متخصص</h4>
-                                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="about.special2">فريق شاب يتمتع بالكفاءة والمرونة والخبرة التقنية</p>
+                                    <h4 class="text-lg font-bold mb-2 text-gray-800 dark:text-white"
+                                        data-i18n="about.specialTitle2">فريق متخصص</h4>
+                                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed"
+                                        data-i18n="about.special2">فريق شاب يتمتع بالكفاءة والمرونة والخبرة التقنية</p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Feature 3 -->
-                        <div class="feature-card bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600 card-hover">
+                        <div
+                            class="feature-card bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600 card-hover">
                             <div class="flex items-start space-x-4 rtl:space-x-reverse">
-                                <div class="icon-container w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <div
+                                    class="icon-container w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
                                     <i class="fas fa-tachometer-alt text-primary-600 dark:text-primary-400 text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-bold mb-2 text-gray-800 dark:text-white" data-i18n="about.specialTitle3">سرعة وأداء</h4>
-                                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="about.special3">معاملات فورية وسريعة مع التزام بأعلى معايير الجودة</p>
+                                    <h4 class="text-lg font-bold mb-2 text-gray-800 dark:text-white"
+                                        data-i18n="about.specialTitle3">سرعة وأداء</h4>
+                                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed"
+                                        data-i18n="about.special3">معاملات فورية وسريعة مع التزام بأعلى معايير الجودة
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Feature 4 -->
-                        <div class="feature-card bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600 card-hover">
+                        <div
+                            class="feature-card bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-600 card-hover">
                             <div class="flex items-start space-x-4 rtl:space-x-reverse">
-                                <div class="icon-container w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-expand-arrows-alt text-secondary-600 dark:text-secondary-400 text-lg"></i>
+                                <div
+                                    class="icon-container w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i
+                                        class="fas fa-expand-arrows-alt text-secondary-600 dark:text-secondary-400 text-lg"></i>
                                 </div>
                                 <div>
-                                    <h4 class="text-lg font-bold mb-2 text-gray-800 dark:text-white" data-i18n="about.specialTitle4">قابلية التوسع</h4>
-                                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="about.special4">قدرة عالية على التوسع والتكيف مع احتياجات السوق</p>
+                                    <h4 class="text-lg font-bold mb-2 text-gray-800 dark:text-white"
+                                        data-i18n="about.specialTitle4">قابلية التوسع</h4>
+                                    <p class="text-gray-700 dark:text-gray-300 leading-relaxed"
+                                        data-i18n="about.special4">قدرة عالية على التوسع والتكيف مع احتياجات السوق</p>
                                 </div>
                             </div>
                         </div>
@@ -399,157 +454,67 @@
                 <!-- Vision & Mission -->
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Vision -->
-                    <div class="bg-gradient-to-br from-primary-600 to-primary-800 text-white p-8 rounded-3xl shadow-2xl card-hover">
+                    <div
+                        class="bg-gradient-to-br from-primary-600 to-primary-800 text-white p-8 rounded-3xl shadow-2xl card-hover">
                         <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                             <i class="fas fa-eye text-2xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-4" data-i18n="about.vision">رؤيتنا</h3>
-                        <p class="text-white/90 leading-relaxed text-lg" data-i18n="about.visionText">أن نكون الشركة الرائدة في مجال الدفع الرقمي والخدمات المالية الإلكترونية في ليبيا والمنطقة، من خلال تقديم حلول مبتكرة تعزز الشمول المالي وتواكب التطور التكنولوجي.</p>
+                        <p class="text-white/90 leading-relaxed text-lg" data-i18n="about.visionText">أن نكون الشركة
+                            الرائدة في مجال الدفع الرقمي والخدمات المالية الإلكترونية في ليبيا والمنطقة، من خلال تقديم
+                            حلول مبتكرة تعزز الشمول المالي وتواكب التطور التكنولوجي.</p>
                     </div>
 
                     <!-- Mission -->
-                    <div class="bg-gradient-to-br from-secondary-600 to-secondary-800 text-white p-8 rounded-3xl shadow-2xl card-hover">
+                    <div
+                        class="bg-gradient-to-br from-secondary-600 to-secondary-800 text-white p-8 rounded-3xl shadow-2xl card-hover">
                         <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
                             <i class="fas fa-bullseye text-2xl"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-4" data-i18n="about.mission">رسالتنا</h3>
-                        <p class="text-white/90 leading-relaxed text-lg" data-i18n="about.missionText">نطمح إلى تعزيز الثقة بالخدمات الرقمية وتقديم حلول مالية مبتكرة وآمنة تلبي احتياجات الأفراد والشركات، وتسهم في بناء اقتصاد رقمي متطور ومرن في ليبيا.</p>
+                        <p class="text-white/90 leading-relaxed text-lg" data-i18n="about.missionText">نطمح إلى تعزيز
+                            الثقة بالخدمات الرقمية وتقديم حلول مالية مبتكرة وآمنة تلبي احتياجات الأفراد والشركات، وتسهم
+                            في بناء اقتصاد رقمي متطور ومرن في ليبيا.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Hawelli Product Section -->
+    <!-- Main Product Section -->
     <section id="hawelli" class="section-padding bg-white dark:bg-gray-900">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="hawelli.title">منتجنا الرئيسي: محفظة حولي</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="hawelli.title">
+                    منتجنا الرئيسي</h2>
                 <div class="w-24 h-1.5 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded"></div>
-                <p class="text-gray-600 dark:text-gray-400 mt-6 text-lg max-w-2xl mx-auto" data-i18n="hawelli.subtitle">محفظة إلكترونية آمنة وسهلة الاستخدام لإدارة أموالك</p>
             </div>
 
-            <div class="max-w-6xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                    <div>
-                        <h3 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white" data-i18n="hawelli.whatIs">ما هي "حولي"؟</h3>
-                        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6" data-i18n="hawelli.description">Hawelli حولي هي المحفظة الإلكترونية المطورة من قبل شركة زاهو، تتيح لك إدارة أموالك بسهولة وأمان من خلال هاتفك الذكي. يمكنك إجراء المدفوعات، تحويل الأموال، شحن الرصيد، ودفع الفواتير بلمسة واحدة.</p>
-                        
-                        <div class="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 p-6 rounded-2xl shadow-lg mb-8">
-                            <p class="text-sm text-gray-600 dark:text-gray-400 mb-4" data-i18n="hawelli.comingSoon">قريبًا على متاجر التطبيقات</p>
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="#" class="app-download-btn bg-gray-800 dark:bg-gray-700 text-white px-6 py-3 rounded-xl flex items-center justify-center space-x-3 rtl:space-x-reverse hover:bg-gray-900 dark:hover:bg-gray-600">
-                                    <i class="fab fa-apple text-2xl"></i>
-                                    <div class="text-right">
-                                        <div class="text-xs" data-i18n="hawelli.downloadOn">Download on the</div>
-                                        <div class="font-bold text-lg" data-i18n="hawelli.appStore">App Store</div>
-                                    </div>
-                                </a>
-                                <a href="#" class="app-download-btn bg-gray-800 dark:bg-gray-700 text-white px-6 py-3 rounded-xl flex items-center justify-center space-x-3 rtl:space-x-reverse hover:bg-gray-900 dark:hover:bg-gray-600">
-                                    <i class="fab fa-google-play text-2xl"></i>
-                                    <div class="text-right">
-                                        <div class="text-xs" data-i18n="hawelli.getItOn">Get it on</div>
-                                        <div class="font-bold text-lg" data-i18n="hawelli.googlePlay">Google Play</div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="relative">
-                        <div class="bg-gradient-to-br from-primary-500 to-secondary-500 p-1 rounded-3xl shadow-2xl">
-                            <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl">
-                                <h4 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white" data-i18n="hawelli.features">مميزات Hawelli</h4>
-                                <div class="space-y-4">
-                                    <!-- Feature 1 -->
-                                    <div class="flex items-start space-x-3 rtl:space-x-reverse">
-                                        <div class="flex-shrink-0 w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center mt-1">
-                                            <i class="fas fa-shield-alt text-primary-600 dark:text-primary-400"></i>
-                                        </div>
-                                        <div>
-                                            <p class="font-medium text-gray-800 dark:text-white" data-i18n="hawelli.featureTitle1">حماية وأمان</p>
-                                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="hawelli.feature1">حماية عالية بفضل تقنيات التشفير المتقدمة</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Feature 2 -->
-                                    <div class="flex items-start space-x-3 rtl:space-x-reverse">
-                                        <div class="flex-shrink-0 w-10 h-10 bg-secondary-100 dark:bg-secondary-900/30 rounded-lg flex items-center justify-center mt-1">
-                                            <i class="fas fa-bolt text-secondary-600 dark:text-secondary-400"></i>
-                                        </div>
-                                        <div>
-                                            <p class="font-medium text-gray-800 dark:text-white" data-i18n="hawelli.featureTitle2">معاملات فورية</p>
-                                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="hawelli.feature2">تحويل واستلام الأموال فورياً وبسرعة</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Feature 3 -->
-                                    <div class="flex items-start space-x-3 rtl:space-x-reverse">
-                                        <div class="flex-shrink-0 w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center mt-1">
-                                            <i class="fas fa-file-invoice-dollar text-primary-600 dark:text-primary-400"></i>
-                                        </div>
-                                        <div>
-                                            <p class="font-medium text-gray-800 dark:text-white" data-i18n="hawelli.featureTitle3">دفع الفواتير</p>
-                                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="hawelli.feature3">دفع فواتير الكهرباء والمياه والاشتراكات</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Feature 4 -->
-                                    <div class="flex items-start space-x-3 rtl:space-x-reverse">
-                                        <div class="flex-shrink-0 w-10 h-10 bg-secondary-100 dark:bg-secondary-900/30 rounded-lg flex items-center justify-center mt-1">
-                                            <i class="fas fa-store text-secondary-600 dark:text-secondary-400"></i>
-                                        </div>
-                                        <div>
-                                            <p class="font-medium text-gray-800 dark:text-white" data-i18n="hawelli.featureTitle4">دفع للمتاجر</p>
-                                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="hawelli.feature4">دعم الدفع لدى التجار وربط نقاط البيع</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Feature 5 -->
-                                    <div class="flex items-start space-x-3 rtl:space-x-reverse">
-                                        <div class="flex-shrink-0 w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center mt-1">
-                                            <i class="fas fa-chart-line text-primary-600 dark:text-primary-400"></i>
-                                        </div>
-                                        <div>
-                                            <p class="font-medium text-gray-800 dark:text-white" data-i18n="hawelli.featureTitle5">تقارير مفصلة</p>
-                                            <p class="text-gray-700 dark:text-gray-300 text-sm" data-i18n="hawelli.feature5">تقارير ومتابعة آنية للرصيد والمعاملات</p>
-                                        </div>
-                                    </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="flex justify-center">
+                    <div class="w-full max-w-2xl">
+                        <!-- Hawelli CTA Section -->
+                        <div
+                            class="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 p-8 rounded-2xl shadow-lg border border-primary-200 dark:border-primary-800">
+                            <div class="flex items-center space-x-4 rtl:space-x-reverse mb-6">
+                                <div class="w-20 h-20 bg-white rounded-xl shadow-md flex items-center justify-center p-3">
+                                    <img src="assets/images/image.png" alt="Hawelli Logo" class="w-full h-full object-contain">
+                                </div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-gray-800 dark:text-white">محفظة حولي</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">المحفظة الإلكترونية الرائدة</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- For Whom -->
-                <div class="bg-gradient-to-r from-primary-50 to-secondary-50 dark:from-primary-900/20 dark:to-secondary-900/20 p-8 rounded-3xl shadow-xl">
-                    <h4 class="text-2xl font-bold mb-8 text-gray-800 dark:text-white text-center" data-i18n="hawelli.forWho">لمن صممت Hawelli؟</h4>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <!-- Individuals -->
-                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl text-center card-hover border-t-4 border-primary-600">
-                            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-user text-primary-600 dark:text-primary-400 text-2xl"></i>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                                اكتشف محفظة حولي، المحفظة الإلكترونية المتطورة التي تتيح لك إدارة أموالك بسهولة وأمان تام. حلول دفع مبتكرة تلبي احتياجاتك اليومية.
+                            </p>
+                            <div class="text-center">
+                                <a href="https://hawelli.zaho.ly" target="_blank"
+                                    class="inline-flex items-center justify-center bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-primary-700 hover:to-secondary-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1 space-x-3 rtl:space-x-reverse">
+                                    <i class="fas fa-external-link-alt text-xl"></i>
+                                    <span>اكتشف حوّلي</span>
+                                </a>
                             </div>
-                            <h5 class="text-xl font-bold mb-2 text-gray-800 dark:text-white" data-i18n="hawelli.forWho1">الأفراد</h5>
-                            <p class="text-gray-600 dark:text-gray-400" data-i18n="hawelli.forWhoDesc1">الباحثين عن وسيلة دفع آمنة وسهلة للاستخدام اليومي</p>
-                        </div>
-                        
-                        <!-- Merchants -->
-                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl text-center card-hover border-t-4 border-secondary-600">
-                            <div class="w-16 h-16 bg-secondary-100 dark:bg-secondary-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-store text-secondary-600 dark:text-secondary-400 text-2xl"></i>
-                            </div>
-                            <h5 class="text-xl font-bold mb-2 text-gray-800 dark:text-white" data-i18n="hawelli.forWho2">التجار</h5>
-                            <p class="text-gray-600 dark:text-gray-400" data-i18n="hawelli.forWhoDesc2">أصحاب المشاريع الصغيرة والمتوسطة لتسهيل الدفع الإلكتروني</p>
-                        </div>
-                        
-                        <!-- Companies -->
-                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl text-center card-hover border-t-4 border-primary-600">
-                            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                                <i class="fas fa-building text-primary-600 dark:text-primary-400 text-2xl"></i>
-                            </div>
-                            <h5 class="text-xl font-bold mb-2 text-gray-800 dark:text-white" data-i18n="hawelli.forWho3">المؤسسات</h5>
-                            <p class="text-gray-600 dark:text-gray-400" data-i18n="hawelli.forWhoDesc3">الشركات الراغبة في تبنّي حلول مالية إلكترونية حديثة</p>
                         </div>
                     </div>
                 </div>
@@ -561,64 +526,90 @@
     <section id="services" class="section-padding bg-gray-50 dark:bg-gray-800">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="services.title">خدماتنا الحالية والمستقبلية</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white"
+                    data-i18n="services.title">خدماتنا الحالية والمستقبلية</h2>
                 <div class="w-24 h-1.5 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded"></div>
-                <p class="text-gray-600 dark:text-gray-400 mt-6 text-lg max-w-2xl mx-auto" data-i18n="services.subtitle">نقدم مجموعة متكاملة من الخدمات المالية الرقمية</p>
+                <p class="text-gray-600 dark:text-gray-400 mt-6 text-lg max-w-2xl mx-auto"
+                    data-i18n="services.subtitle">نقدم مجموعة متكاملة من الخدمات المالية الرقمية</p>
             </div>
 
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Service 1 -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
+                <div
+                    class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
                         <i class="fas fa-mobile-alt text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service1">تطوير وتشغيل حلول مالية إلكترونية</h3>
-                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc1">نصمم ونطور حلولاً مالية إلكترونية متكاملة تلبي احتياجات السوق الليبي.</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service1">تطوير
+                        وتشغيل حلول مالية إلكترونية</h3>
+                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc1">نصمم ونطور حلولاً
+                        مالية إلكترونية متكاملة تلبي احتياجات السوق الليبي.</p>
                 </div>
 
                 <!-- Service 2 -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
+                <div
+                    class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
                         <i class="fas fa-credit-card text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service2">بوابات الدفع الإلكتروني</h3>
-                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc2">بناء بوابات دفع وتكامل مع الأنظمة المصرفية والمالية.</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service2">
+                        بوابات الدفع الإلكتروني</h3>
+                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc2">بناء بوابات دفع وتكامل
+                        مع الأنظمة المصرفية والمالية.</p>
                 </div>
 
                 <!-- Service 3 -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
+                <div
+                    class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
                         <i class="fas fa-chart-pie text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service3">أدوات إدارة مالية</h3>
-                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc3">تقديم أدوات إدارة مالية متقدمة للمؤسسات والشركات.</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service3">أدوات
+                        إدارة مالية</h3>
+                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc3">تقديم أدوات إدارة
+                        مالية متقدمة للمؤسسات والشركات.</p>
                 </div>
 
                 <!-- Service 4 -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
+                <div
+                    class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
                         <i class="fas fa-code text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service4">APIs ودمج الأنظمة</h3>
-                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc4">دعم عمليات الدفع الإلكتروني وتطوير واجهات برمجية APIs.</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service4">APIs
+                        ودمج الأنظمة</h3>
+                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc4">دعم عمليات الدفع
+                        الإلكتروني وتطوير واجهات برمجية APIs.</p>
                 </div>
 
                 <!-- Service 5 -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
+                <div
+                    class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
                         <i class="fas fa-cash-register text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service5">أنظمة نقاط البيع</h3>
-                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc5">تصميم أنظمة إدارة للنقاط التجارية ودفع الفواتير.</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service5">أنظمة
+                        نقاط البيع</h3>
+                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc5">تصميم أنظمة إدارة
+                        للنقاط التجارية ودفع الفواتير.</p>
                 </div>
 
                 <!-- Service 6 -->
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
-                    <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
+                <div
+                    class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg card-hover border border-gray-100 dark:border-gray-600">
+                    <div
+                        class="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl flex items-center justify-center mb-4 shadow-md">
                         <i class="fas fa-headset text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service6">الدعم والاستشارات</h3>
-                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc6">تقديم استشارات تقنية ودعم فني متخصص للخدمات المالية.</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="services.service6">الدعم
+                        والاستشارات</h3>
+                    <p class="text-gray-600 dark:text-gray-400" data-i18n="services.serviceDesc6">تقديم استشارات تقنية
+                        ودعم فني متخصص للخدمات المالية.</p>
                 </div>
             </div>
         </div>
@@ -628,46 +619,64 @@
     <section id="solutions" class="section-padding bg-white dark:bg-gray-900">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="solutions.title">نخدم قطاعات متنوعة</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white"
+                    data-i18n="solutions.title">نخدم قطاعات متنوعة</h2>
                 <div class="w-24 h-1.5 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded"></div>
-                <p class="text-gray-600 dark:text-gray-400 mt-6 text-lg max-w-2xl mx-auto" data-i18n="solutions.subtitle">حلولنا المالية تلبي احتياجات مختلف القطاعات</p>
+                <p class="text-gray-600 dark:text-gray-400 mt-6 text-lg max-w-2xl mx-auto"
+                    data-i18n="solutions.subtitle">حلولنا المالية تلبي احتياجات مختلف القطاعات</p>
             </div>
 
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Individuals -->
-                <div class="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-800 p-8 rounded-3xl shadow-lg text-center card-hover">
-                    <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <div
+                    class="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-800 p-8 rounded-3xl shadow-lg text-center card-hover">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                         <i class="fas fa-user-friends text-white text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="solutions.individuals">الأفراد</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="solutions.individualsDesc">حلول دفع شخصية آمنة لإدارة الأموال اليومية</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="solutions.individuals">
+                        الأفراد</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="solutions.individualsDesc">حلول دفع
+                        شخصية آمنة لإدارة الأموال اليومية</p>
                 </div>
 
                 <!-- Merchants -->
-                <div class="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-800 p-8 rounded-3xl shadow-lg text-center card-hover">
-                    <div class="w-20 h-20 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <div
+                    class="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-800 p-8 rounded-3xl shadow-lg text-center card-hover">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                         <i class="fas fa-store-alt text-white text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="solutions.merchants">التجار</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="solutions.merchantsDesc">أنظمة دفع إلكتروني للمتاجر والمشاريع التجارية</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="solutions.merchants">
+                        التجار</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="solutions.merchantsDesc">أنظمة دفع
+                        إلكتروني للمتاجر والمشاريع التجارية</p>
                 </div>
 
                 <!-- Companies -->
-                <div class="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-800 p-8 rounded-3xl shadow-lg text-center card-hover">
-                    <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <div
+                    class="bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-800 p-8 rounded-3xl shadow-lg text-center card-hover">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                         <i class="fas fa-building text-white text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="solutions.companies">المؤسسات</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="solutions.companiesDesc">حلول مالية متكاملة للشركات والمؤسسات</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="solutions.companies">
+                        المؤسسات</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="solutions.companiesDesc">حلول مالية
+                        متكاملة للشركات والمؤسسات</p>
                 </div>
 
                 <!-- Partners -->
-                <div class="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-800 p-8 rounded-3xl shadow-lg text-center card-hover">
-                    <div class="w-20 h-20 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <div
+                    class="bg-gradient-to-br from-secondary-50 to-white dark:from-secondary-900/20 dark:to-gray-800 p-8 rounded-3xl shadow-lg text-center card-hover">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                         <i class="fas fa-handshake text-white text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="solutions.partners">الشركاء</h3>
-                    <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="solutions.partnersDesc">تعاون مع البنوك وشركات الاتصالات والتكنولوجيا</p>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800 dark:text-white" data-i18n="solutions.partners">
+                        الشركاء</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm" data-i18n="solutions.partnersDesc">تعاون مع
+                        البنوك وشركات الاتصالات والتكنولوجيا</p>
                 </div>
             </div>
         </div>
@@ -677,96 +686,106 @@
     <section id="contact" class="section-padding bg-gray-50 dark:bg-gray-800">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="contact.title">اتصل بنا</h2>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-white" data-i18n="contact.title">
+                    اتصل بنا</h2>
                 <div class="w-24 h-1.5 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded"></div>
-                <p class="text-gray-600 dark:text-gray-400 mt-6 text-lg max-w-2xl mx-auto" data-i18n="contact.subtitle">نحن هنا لمساعدتك في أي استفسار أو طلب</p>
+                <p class="text-gray-600 dark:text-gray-400 mt-6 text-lg max-w-2xl mx-auto" data-i18n="contact.subtitle">
+                    نحن هنا لمساعدتك في أي استفسار أو طلب</p>
             </div>
 
             <div class="max-w-6xl mx-auto">
                 <div class="grid lg:grid-cols-2 gap-12">
                     <!-- Contact Form -->
-                    <div class="bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-2xl">
-                        <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white" data-i18n="contact.sendMessage">أرسل رسالة</h3>
-                        <form id="contact-form" class="space-y-5">
-                            <div>
-                                <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2" data-i18n="contact.name">الاسم</label>
-                                <input type="text" name="user_name" required 
-                                    class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-800 transition">
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-xl">
+                        <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-white"
+                            data-i18n="contact.sendMessage">أرسل رسالة</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1 text-sm"
+                                        data-i18n="contact.name">الاسم</label>
+                                    <input type="text" name="user_name" required
+                                        class="w-full px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-200 dark:focus:ring-primary-800 transition text-sm">
+                                </div>
+
+                                <div>
+                                    <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1 text-sm"
+                                        data-i18n="contact.email">البريد الإلكتروني</label>
+                                    <input type="email" name="user_email" required
+                                        class="w-full px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-200 dark:focus:ring-primary-800 transition text-sm">
+                                </div>
                             </div>
 
                             <div>
-                                <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2" data-i18n="contact.email">البريد الإلكتروني</label>
-                                <input type="email" name="user_email" required 
-                                    class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-800 transition">
+                                <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1 text-sm"
+                                    data-i18n="contact.subject">الموضوع</label>
+                                <input type="text" name="subject" required
+                                    class="w-full px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-200 dark:focus:ring-primary-800 transition text-sm">
                             </div>
 
                             <div>
-                                <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2" data-i18n="contact.subject">الموضوع</label>
-                                <input type="text" name="subject" required 
-                                    class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-800 transition">
+                                <label class="block text-gray-700 dark:text-gray-300 font-medium mb-1 text-sm"
+                                    data-i18n="contact.message">الرسالة</label>
+                                <textarea name="message" rows="3" required
+                                    class="w-full px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-200 dark:focus:ring-primary-800 transition text-sm"></textarea>
                             </div>
 
-                            <div>
-                                <label class="block text-gray-700 dark:text-gray-300 font-semibold mb-2" data-i18n="contact.message">الرسالة</label>
-                                <textarea name="message" rows="5" required 
-                                    class="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-600 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-200 dark:focus:ring-primary-800 transition"></textarea>
-                            </div>
-
-                            <button type="submit" 
-                                class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-bold py-4 px-6 rounded-xl transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                            <button type="submit"
+                                class="w-full bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-semibold py-3 px-4 rounded-lg transition shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-sm">
                                 <i class="fas fa-paper-plane ml-2"></i>
                                 <span data-i18n="contact.send">إرسال الرسالة</span>
                             </button>
                         </form>
-                        <div id="form-message" class="mt-6 hidden"></div>
+                        <div id="form-message" class="mt-4 hidden"></div>
                     </div>
 
                     <!-- Contact Information -->
                     <div class="space-y-6">
                         <!-- Info Card -->
-                        <div class="bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-600">
-                            <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white" data-i18n="contact.contactInfo">معلومات الاتصال</h3>
+                        <div
+                            class="bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-600">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white"
+                                data-i18n="contact.contactInfo">معلومات الاتصال</h3>
                             <div class="space-y-5">
                                 <!-- Email -->
                                 <div class="flex items-start space-x-4 rtl:space-x-reverse">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center">
+                                    <div
+                                        class="flex-shrink-0 w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center">
                                         <i class="fas fa-envelope text-primary-600 dark:text-primary-400 text-lg"></i>
                                     </div>
                                     <div>
-                                        <p class="font-semibold text-gray-800 dark:text-white mb-1" data-i18n="contact.emailLabel">البريد الإلكتروني</p>
-                                        <a href="mailto:info@zaho.ly" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">info@zaho.ly</a>
+                                        <p class="font-semibold text-gray-800 dark:text-white mb-1"
+                                            data-i18n="contact.emailLabel">البريد الإلكتروني</p>
+                                        <a href="mailto:info@zaho.ly"
+                                            class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">contact@zaho.ly</a>
                                     </div>
                                 </div>
 
                                 <!-- Phone -->
                                 <div class="flex items-start space-x-4 rtl:space-x-reverse">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-xl flex items-center justify-center">
-                                        <i class="fas fa-phone-alt text-secondary-600 dark:text-secondary-400 text-lg"></i>
+                                    <div
+                                        class="flex-shrink-0 w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-xl flex items-center justify-center">
+                                        <i
+                                            class="fas fa-phone-alt text-secondary-600 dark:text-secondary-400 text-lg"></i>
                                     </div>
                                     <div>
-                                        <p class="font-semibold text-gray-800 dark:text-white mb-1" data-i18n="contact.phoneLabel">الهاتف</p>
-                                        <a href="tel:+218912615455" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">+218 91 261 5455</a>
-                                    </div>
-                                </div>
-
-                                <!-- Website -->
-                                <div class="flex items-start space-x-4 rtl:space-x-reverse">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-primary-100 dark:bg-primary-900/30 rounded-xl flex items-center justify-center">
-                                        <i class="fas fa-globe text-primary-600 dark:text-primary-400 text-lg"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-semibold text-gray-800 dark:text-white mb-1" data-i18n="contact.websiteLabel">الموقع الإلكتروني</p>
-                                        <a href="https://www.zaho.ly" target="_blank" class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">www.zaho.ly</a>
+                                        <p class="font-semibold text-gray-800 dark:text-white mb-1"
+                                            data-i18n="contact.phoneLabel">الهاتف</p>
+                                        <a href="tel:0912615455"
+                                            class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">0912615455</a>
                                     </div>
                                 </div>
 
                                 <!-- Address -->
                                 <div class="flex items-start space-x-4 rtl:space-x-reverse">
-                                    <div class="flex-shrink-0 w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-xl flex items-center justify-center">
-                                        <i class="fas fa-map-marker-alt text-secondary-600 dark:text-secondary-400 text-lg"></i>
+                                    <div
+                                        class="flex-shrink-0 w-12 h-12 bg-secondary-100 dark:bg-secondary-900/30 rounded-xl flex items-center justify-center">
+                                        <i
+                                            class="fas fa-map-marker-alt text-secondary-600 dark:text-secondary-400 text-lg"></i>
                                     </div>
                                     <div>
-                                        <p class="font-semibold text-gray-800 dark:text-white mb-1" data-i18n="contact.addressLabel">مقر الشركة</p>
+                                        <p class="font-semibold text-gray-800 dark:text-white mb-1"
+                                            data-i18n="contact.addressLabel">مقر الشركة</p>
                                         <p class="text-gray-700 dark:text-gray-300">جنزور – طرابلس – ليبيا</p>
                                     </div>
                                 </div>
@@ -774,10 +793,14 @@
                         </div>
 
                         <!-- CTA Card -->
-                        <div class="bg-gradient-to-br from-primary-600 to-secondary-600 text-white p-8 rounded-3xl shadow-2xl">
-                            <h4 class="text-xl font-bold mb-4" data-i18n="contact.ctaTitle">ابدأ رحلتك مع حولي اليوم</h4>
-                            <p class="mb-6 text-white/90" data-i18n="contact.ctaDesc">اكتشف المحفظة الإلكترونية التي ستغير طريقة تعاملك مع المال</p>
-                            <a href="https://hawelli.ly" target="_blank" class="inline-flex items-center justify-center bg-white text-primary-600 px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition shadow-lg space-x-2 rtl:space-x-reverse">
+                        <div
+                            class="bg-gradient-to-br from-primary-600 to-secondary-600 text-white p-8 rounded-3xl shadow-2xl">
+                            <h4 class="text-xl font-bold mb-4" data-i18n="contact.ctaTitle">ابدأ رحلتك مع حولي اليوم
+                            </h4>
+                            <p class="mb-6 text-white/90" data-i18n="contact.ctaDesc">اكتشف المحفظة الإلكترونية التي
+                                ستغير طريقة تعاملك مع المال</p>
+                            <a href="https://hawelli.zaho.ly" target="_blank"
+                                class="inline-flex items-center justify-center bg-white text-primary-600 px-6 py-3 rounded-xl font-bold hover:bg-gray-100 transition shadow-lg space-x-2 rtl:space-x-reverse">
                                 <i class="fas fa-rocket"></i>
                                 <span data-i18n="contact.ctaButton">اكتشف حولي</span>
                             </a>
@@ -794,219 +817,81 @@
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <!-- Company Info -->
                 <div>
-                    <div class="flex items-center space-x-2 rtl:space-x-reverse mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
+                    <div class="flex items-center space-x-3 rtl:space-x-reverse mb-4">
+                        <img src="assets/images/zaho-logo.png" alt="Zaho Logo" class="h-10 w-auto"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl items-center justify-center">
                             <i class="fas fa-wallet text-white"></i>
                         </div>
-                        <span class="text-2xl font-bold">ZAHO</span>
                     </div>
-                    <p class="text-gray-400 text-sm" data-i18n="footer.description">شركة مختصة في الحلول الرقمية المبتكرة والخدمات المالية الإلكترونية في ليبيا</p>
+                    <p class="text-gray-400 text-sm" data-i18n="footer.description">شركة مختصة في الحلول الرقمية
+                        المبتكرة والخدمات المالية الإلكترونية في ليبيا</p>
                 </div>
-                
+
                 <!-- Quick Links -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4" data-i18n="footer.quickLinks">روابط سريعة</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="#about" class="hover:text-white transition" data-i18n="nav.about">من نحن</a></li>
                         <li><a href="#hawelli" class="hover:text-white transition" data-i18n="nav.hawelli">حولي</a></li>
-                        <li><a href="#services" class="hover:text-white transition" data-i18n="nav.services">الخدمات</a></li>
-                        <li><a href="#solutions" class="hover:text-white transition" data-i18n="nav.solutions">الحلول</a></li>
-                        <li><a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">اتصل بنا</a></li>
+                        <li><a href="#services" class="hover:text-white transition" data-i18n="nav.services">الخدمات</a>
+                        </li>
+                        <li><a href="#solutions" class="hover:text-white transition"
+                                data-i18n="nav.solutions">الحلول</a></li>
+                        <li><a href="#contact" class="hover:text-white transition" data-i18n="nav.contact">اتصل بنا</a>
+                        </li>
                     </ul>
                 </div>
-                
+
                 <!-- Policies -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4" data-i18n="footer.policies">السياسات</h4>
                     <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><a href="#" class="hover:text-white transition">الشروط والأحكام</a></li>
-                        <li><a href="#" class="hover:text-white transition">سياسة الخصوصية</a></li>
-                        <li><a href="#" class="hover:text-white transition">سياسة الاستخدام</a></li>
-                        <li><a href="#" class="hover:text-white transition">الأمان والسلامة</a></li>
+                        <li><a href="https://pricacy-policy.zaho.ly" class="hover:text-white transition">سياسة الخصوصية</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- Social Media -->
                 <div>
                     <h4 class="text-lg font-semibold mb-4" data-i18n="footer.followUs">تابعنا</h4>
                     <div class="flex space-x-3 rtl:space-x-reverse">
-                        <a href="#" class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-primary-600 transition">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-primary-600 transition">
                             <i class="fab fa-facebook-f"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-blue-400 transition">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-blue-400 transition">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-pink-600 transition">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-pink-600 transition">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-blue-700 transition">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 dark:bg-gray-700 rounded-xl flex items-center justify-center hover:bg-blue-700 transition">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
-                    
-                    <!-- Newsletter -->
-                    <div class="mt-6">
-                        <p class="text-sm text-gray-400 mb-2" data-i18n="footer.newsletter">اشترك في نشرتنا الإخبارية</p>
-                        <div class="flex">
-                            <input type="email" data-i18n="footer.newsletterPlaceholder" placeholder="" class="bg-gray-800 text-white text-sm rounded-r-xl px-4 py-2 w-full focus:outline-none">
-                            <button class="bg-gradient-to-r from-primary-600 to-secondary-600 px-4 py-2 rounded-l-xl text-sm">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
             <!-- Copyright -->
             <div class="border-t border-gray-800 dark:border-gray-700 pt-8 text-center text-gray-400">
-                <p>&copy; <span id="current-year"></span> <span class="font-bold gradient-text">Zaho</span>. <span data-i18n="footer.copyright">جميع الحقوق محفوظة</span>.</p>
+                <p>&copy; <span id="current-year"></span> <span class="font-bold gradient-text">Zaho</span>. <span
+                        data-i18n="footer.copyright">جميع الحقوق محفوظة</span>.</p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-6 left-6 w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all opacity-0 invisible">
+    <button id="back-to-top"
+        class="fixed bottom-6 left-6 w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all opacity-0 invisible">
         <i class="fas fa-chevron-up"></i>
     </button>
 
-    <!-- JavaScript -->
-    <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const htmlElement = document.documentElement;
-        
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            htmlElement.classList.add('dark');
-            themeToggle.innerHTML = '<i class="fas fa-sun text-lg"></i>';
-        } else {
-            htmlElement.classList.remove('dark');
-            themeToggle.innerHTML = '<i class="fas fa-moon text-lg"></i>';
-        }
-        
-        themeToggle.addEventListener('click', () => {
-            if (htmlElement.classList.contains('dark')) {
-                htmlElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-                themeToggle.innerHTML = '<i class="fas fa-moon text-lg"></i>';
-            } else {
-                htmlElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-                themeToggle.innerHTML = '<i class="fas fa-sun text-lg"></i>';
-            }
-        });
-        
-        // Language Switcher - Will be handled by LanguageManager module
-        
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenuBtn.innerHTML = mobileMenu.classList.contains('hidden') 
-                ? '<i class="fas fa-bars text-xl"></i>' 
-                : '<i class="fas fa-times text-xl"></i>';
-        });
-        
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
-            });
-        });
-        
-        // Back to Top Button
-        const backToTopBtn = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('opacity-0', 'invisible');
-                backToTopBtn.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopBtn.classList.remove('opacity-100', 'visible');
-                backToTopBtn.classList.add('opacity-0', 'invisible');
-            }
-        });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        
-        // Form Submission
-        const contactForm = document.getElementById('contact-form');
-        const formMessage = document.getElementById('form-message');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                // Simulate form submission
-                formMessage.className = 'mt-6 p-4 rounded-xl bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300';
-                formMessage.innerHTML = '<i class="fas fa-check-circle mr-2"></i> تم إرسال رسالتك بنجاح! سنرد عليك في أقرب وقت ممكن.';
-                formMessage.classList.remove('hidden');
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.classList.add('hidden');
-                }, 5000);
-            });
-        }
-        
-        // Stats Counter Animation
-        const statsElements = document.querySelectorAll('.stats-counter');
-        
-        const animateCounter = (element) => {
-            const target = parseInt(element.textContent.replace('+', ''));
-            const duration = 2000;
-            const step = target / (duration / 16);
-            let current = 0;
-            
-            const timer = setInterval(() => {
-                current += step;
-                if (current >= target) {
-                    element.textContent = `+${target}`;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = `+${Math.floor(current)}`;
-                }
-            }, 16);
-        };
-        
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                    
-                    // Animate stats counters
-                    if (entry.target.querySelector('.stats-counter')) {
-                        setTimeout(() => {
-                            entry.target.querySelectorAll('.stats-counter').forEach(counter => {
-                                animateCounter(counter);
-                            });
-                        }, 500);
-                    }
-                    
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        
-        // Observe sections
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
-    
+
+
     <!-- Load JavaScript Modules -->
     <script src="assets/js/modules/language.js"></script>
     <script src="assets/js/modules/theme.js"></script>
@@ -1018,4 +903,5 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
+
 </html>

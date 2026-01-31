@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محفظة حولّي – Hawelli</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #4F6BFF;
+  --deep: #2F3CFF;
+  --accent: #00C2FF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cairo', sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #0f172a;
+  line-height: 1.9;
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--deep), var(--primary), var(--accent));
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px 80px;
+}
+
+/* ===== LOGO + TITLE ===== */
+.hero-title {
+  display: flex;
+  flex-direction: row-reverse; /* الشعار على اليسار */
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.hero-title img.logo {
+  width: 120px; /* تكبير الشعار */
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 6px;
+}
+
+.hero-title h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+/* ===== SUBTITLE ===== */
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+/* ===== DOWNLOAD BUTTONS ===== */
+.store-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  max-width: 540px;
+  margin: auto;
+}
+
+.store-buttons a {
+  background: #ffffff;
+  color: var(--deep);
+  padding: 15px 18px;
+  border-radius: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  border: 2px solid rgba(255,255,255,0.5);
+}
+
+.store-buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* ===== POWERED ===== */
+.powered-zaho {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 1.1rem; /* زيادة بسيطة في الحجم */
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* ===== LANGUAGE TOGGLE BUTTON ===== */
+.lang-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px; /* start on right for Arabic */
+  background: #fff;
+  color: var(--deep);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.lang-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+
+<body>
+
+<!-- Language Toggle -->
+<button class="lang-toggle" id="langToggle">English</button>
+
+<div class="hero">
+
+  <div class="hero-title">
+    <img src="image.png" alt="Hawelli Logo" class="logo">
+    <h1 id="mainTitle">محفظة حولّي</h1>
+  </div>
+
+  <p id="subTitle">فلوسك في تليفونك</p>
+
+  <div class="store-buttons">
+    <a href="#" id="btnIOSIndividual">iOS – أفراد</a>
+    <a href="#" id="btnIOSBusiness">iOS – أعمال</a>
+    <a href="#" id="btnAndroidIndividual">Android – أفراد</a>
+    <a href="#" id="btnAndroidBusiness">Android – أعمال</a>
+  </div>
+
+  <span class="powered-zaho">Powered by Zaho</span>
+</div>
+
+<script>
+const langToggle = document.getElementById('langToggle');
+let isArabic = true;
+
+langToggle.addEventListener('click', () => {
+  if (isArabic) {
+    // Switch to English
+    document.documentElement.lang = 'en';
+    document.documentElement.dir = 'ltr';
+    document.getElementById('mainTitle').textContent = "Hawelli Wallet";
+    document.getElementById('subTitle').textContent = "Your money in your phone";
+    document.getElementById('btnIOSIndividual').textContent = "iOS – Individual";
+    document.getElementById('btnIOSBusiness').textContent = "iOS – Business";
+    document.getElementById('btnAndroidIndividual').textContent = "Android – Individual";
+    document.getElementById('btnAndroidBusiness').textContent = "Android – Business";
+    langToggle.textContent = "العربية";
+    langToggle.style.right = "auto";
+    langToggle.style.left = "20px"; // move toggle to left in English
+    isArabic = false;
+  } else {
+    // Switch to Arabic
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+    document.getElementById('mainTitle').textContent = "محفظة حولّي";
+    document.getElementById('subTitle').textContent = "فلوسك في تليفونك";
+    document.getElementById('btnIOSIndividual').textContent = "iOS – أفراد";
+    document.getElementById('btnIOSBusiness').textContent = "iOS – أعمال";
+    document.getElementById('btnAndroidIndividual').textContent = "Android – أفراد";
+    document.getElementById('btnAndroidBusiness').textContent = "Android – أعمال";
+    langToggle.textContent = "English";
+    langToggle.style.left = "auto";
+    langToggle.style.right = "20px"; // move toggle back to right in Arabic
+    isArabic = true;
+  }
+});
+</script>
+
+</body>
+</html>

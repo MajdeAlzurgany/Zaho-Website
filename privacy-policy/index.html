@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Privacy Policy | Zaho</title>
+    <meta name="description" content="Zaho Electronic Payment Services Privacy Policy">
+    <link rel="icon" type="image/png" href="../assets/images/zaho-logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        }
+                    },
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Cairo', 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .lang-toggle {
+            transition: all 0.3s ease;
+        }
+        
+        .lang-toggle:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="../assets/images/zaho-logo.png" alt="Zaho Logo" class="h-10 w-auto"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden items-center space-x-2 rtl:space-x-reverse">
+                            <div class="w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center">
+                                <span class="text-white font-bold text-sm">Z</span>
+                            </div>
+                            <span class="text-xl font-bold gradient-text">ZAHO</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Language Toggle -->
+                <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                    <button onclick="toggleLanguage('ar')" id="btn-ar" class="lang-toggle px-4 py-2 rounded-lg bg-primary-600 text-white text-sm font-medium shadow-sm">
+                        العربية
+                    </button>
+                    <button onclick="toggleLanguage('en')" id="btn-en" class="lang-toggle px-4 py-2 rounded-lg bg-gray-100 text-gray-700 text-sm font-medium">
+                        English
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 py-12">
+        <!-- Arabic Content -->
+        <div id="content-ar" class="content-section" dir="rtl">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">سياسة الخصوصية</h1>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded"></div>
+                <p class="text-gray-600 mt-4 text-lg">شركة زاهو للخدمات المالية الإلكترونية</p>
+                <p class="text-gray-500 text-sm mt-2">آخر تحديث: يناير 2025</p>
+            </div>
+
+            <div class="prose prose-lg max-w-none">
+                <section class="mb-12">
+                    <p class="mb-6 leading-relaxed text-gray-700">
+                        توضح هذه السياسة خصوصية المعلومات الشخصية التي قد نجمعها منك والأغراض التي ستُستخدم من أجلها. باستخدامك لهذا الموقع، فإنك توافق على ممارسات البيانات الموضحة في هذه السياسة.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">من هو مالك هذا الموقع؟</h2>
+                    <p class="leading-relaxed text-gray-700">
+                        الموقع مملوك من قبل شركة زاهو لخدمات الدفع الالكتروني– جنزور- طرابلس- ليبيا. الاسم التجاري المسجّل: حوّلي (Hawelli).
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">ما المعلومات التي نجمعها وكيف نستخدمها؟</h2>
+                    <p class="mb-6 leading-relaxed text-gray-700">
+                        اعتمادًا على الخدمات التي تستخدمها عبر الموقع، قد نجمع أنواعًا مختلفة من المعلومات. وهذه الأنواع والاستخدامات موضحة أدناه:
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">المعلومات التي تزودنا بها</h3>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        نقوم بجمع ومعالجة المعلومات التي قد تقدمها لأغراض محددة، مثل: اسمك، بريدك الإلكتروني، وموقعك، الرقم الوطني، رقم جواز السفر، رقم الهاتف.
+                    </p>
+                    <p class="mb-6 leading-relaxed text-gray-700">
+                        نستخدم هذه التفاصيل لتزويدك بالمعلومات المتعلقة بأي منتج أو خدمة تطلبها منا، وللتواصل معك. إذا تواصلت معنا عبر بعض خدمات الموقع، فقد نطلب بعض المعلومات الإضافية لتقديم استجابة أكثر ملاءمة لاحتياجاتك.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">مع من نشارك بياناتك الشخصية؟</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        نشارك بياناتك الشخصية فقط مع الجهات التالية وللأغراض المذكورة أعلاه:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>الشركاء التجاريون والمصرفيون (مثل البطاقات المحلية).</li>
+                        <li>السلطات المالية أو القضائية أو الحكومية، وفقًا للقانون.</li>
+                        <li>بعض المهن المنظمة (مثل المحامين والمدققين).</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">لماذا وعلى أي أساس نستخدم بياناتك الشخصية؟</h2>
+                    
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">(أ) للامتثال لالتزاماتنا القانونية والتنظيمية</h3>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        نستخدم بياناتك الشخصية للوفاء بمتطلبات قانونية وتنظيمية مختلفة، منها:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>مكافحة غسل الأموال وتمويل الإرهاب.</li>
+                        <li>الالتزام بالقوانين المتعلقة بالعقوبات والحظر الدولية.</li>
+                        <li>مكافحة التهرب الضريبي والوفاء بواجبات المراقبة والإبلاغ الضريبي.</li>
+                        <li>الالتزام بالأنظمة المصرفية والمالية التي تلزمنا بـ:
+                            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                                <li>تطبيق تدابير أمنية لمنع إساءة الاستخدام والاحتيال.</li>
+                                <li>رصد المعاملات الخارجة عن أنشطتك المعتادة.</li>
+                                <li>تقييم المخاطر الائتمانية وقدرتك على السداد.</li>
+                                <li>متابعة المخاطر والإبلاغ عنها.</li>
+                                <li>الاستجابة للطلبات الرسمية من السلطات العامة أو القضائية المخولة.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">(ب) لتنفيذ عقد معك أو اتخاذ تدابير ما قبل التعاقد بناءً على طلبك</h3>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        نستخدم بياناتك الشخصية لإبرام العقود معك وتنفيذها، بما في ذلك:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>تزويدك بالمعلومات عن منتجاتنا وخدماتنا.</li>
+                        <li>مساعدتك والرد على طلباتك.</li>
+                        <li>تقييم الشروط التي يمكننا بموجبها تقديم منتج أو خدمة لك.</li>
+                        <li>تقديم منتجات أو خدمات لعملائنا من المؤسسات التي تعمل بها.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">(ج) لخدمة مصالحنا المشروعة</h3>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        نستخدم بياناتك الشخصية لتطوير منتجاتنا وخدماتنا، وتحسين إدارة المخاطر، والدفاع عن مصالحنا القانونية، بما في ذلك:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>إثبات المعاملات.</li>
+                        <li>منع الاحتيال.</li>
+                        <li>إدارة تكنولوجيا المعلومات (البنية التحتية، استمرارية الأعمال، الأمن السيبراني).</li>
+                        <li>إنشاء نماذج إحصائية عبر تحليل معاملاتك (مثل تقييم المخاطر الائتمانية).</li>
+                    </ul>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        ويتم في هذه الحالات تجميع البيانات لتصبح مجهولة الهوية، مما يتيح رؤى سوقية عامة.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        تخصيص عروضنا التجارية عبر:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>تحسين جودة خدماتنا المصرفية والمالية والتأمينية.</li>
+                        <li>تقديم منتجات وخدمات ملائمة لملفك الشخصي.</li>
+                    </ul>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        ويتم ذلك عبر:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>تقسيم العملاء والمهتمين إلى شرائح.</li>
+                        <li>تحليل أنماط الاستخدام والتفضيلات (زيارات الفروع، الرسائل الإلكترونية، زيارة المواقع الإلكترونية...).</li>
+                        <li>مشاركة بياناتك مع شركة أخرى من نفس المجموعة إذا كنت أو قد تصبح عميلًا لها.</li>
+                        <li>تكييف العروض بناءً على المنتجات أو الخدمات التي لديك بالفعل.</li>
+                        <li>متابعة المعاملات للكشف عن الأنشطة غير المعتادة (مثل الإيداعات الكبيرة بشكل غير مألوف).</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">(د) احترام اختياراتك عندما نطلب موافقتك</h3>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        في بعض الحالات، نحتاج إلى موافقتك لمعالجة بياناتك، مثل:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>عندما تنطوي المعالجة على اتخاذ قرارات آلية تؤثر قانونيًا عليك أو تؤثر عليك بشكل كبير.</li>
+                        <li>عندما تتم معالجة البيانات لأغراض أخرى غير المذكورة أعلاه، حيث نخطرك ونطلب موافقتك عند الضرورة.</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">ما مدة احتفاظنا ببياناتك الشخصية؟</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        نحتفظ ببياناتك الشخصية للمدة الأطول من بين:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>المدة التي تتطلبها القوانين واللوائح المعمول بها، أو</li>
+                        <li>المدة اللازمة لأسباب تشغيلية (مثل: إدارة الحسابات، إدارة العلاقة مع العملاء، الرد على النزاعات أو الجهات الرقابية).</li>
+                    </ul>
+                    <p class="leading-relaxed text-gray-700">
+                        بالنسبة للعملاء، يتم الاحتفاظ بمعظم البيانات طوال فترة العلاقة التعاقدية وحتى 10 سنوات بعد انتهائها.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">معلومات استخدام الموقع / التطبيق</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        نستقبل ونخزن بعض المعلومات في كل مرة تتفاعل فيها معنا. نجمع معلومات الاستخدام أثناء زيارتك لموقعنا/ تطبيقنا، بما في ذلك التاريخ، الوقت، الصفحات التي تمت مشاهدتها أو البحث عنها، وغيرها من البيانات المتعلقة بنشاطك التصفحي.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        قد نستخدم أيضًا هذه المعلومات لإنشاء بيانات إحصائية حول استخدام الموقع/ التطبيق، والتي يمكن أن نستخدمها أو نشاركها مع أطراف أخرى لأغراض تسويقية أو لتطوير استراتيجيات العمل، دون أن يتم تحديد هوية أي فرد ضمن تلك البيانات.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        نقوم بجمع معلومات الاستخدام لمساعدتنا على:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>تطوير وتقديم خدمات ومعلومات تلبي احتياجاتك بشكل أفضل.</li>
+                        <li>إعلامك بالفعاليات والخدمات والمنتجات التي نعتقد أنها تهمك.</li>
+                        <li>التواصل معك إذا وافقت على ذلك.</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">عناوين بروتوكول الإنترنت (IP)</h2>
+                    <p class="leading-relaxed text-gray-700">
+                        نستخدم عناوين الـ IP لتحليل التوجهات، وتتبع حركة المستخدمين، وجمع معلومات ديموغرافية عامة لأغراض تحليلية. ولا يتم ربط عناوين الـ IP بمعلومات تحدد الهوية الشخصية.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">ملفات تعريف الارتباط (Cookies)</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        عند زيارة موقعنا/ تطبيقنا، نقوم بجمع معلومات سجل الإنترنت القياسية وأنماط سلوك الزوار. الغرض من ذلك معرفة عدد الزوار للأقسام المختلفة في الموقع/ التطبيق. يتم جمع هذه المعلومات بطريقة لا تحدد هوية أي شخص.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        الأداة التي نستخدمها لتحليل أنماط الزوار تعتمد على ملفات تعريف الارتباط (Cookies)، وهي ملفات نصية يتم وضعها على جهازك لجمع المعلومات. يمكنك اختيار قبول أو رفض ملفات تعريف الارتباط من خلال إعدادات متصفحك.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">الروابط إلى مواقع أخرى</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        قد يحتوي هذا الموقع/ التطبيق على روابط لمواقع أخرى. وجود رابط لموقع طرف ثالث لا يعني بالضرورة تأييد محتواه. عليك أن تستخدم حكمك الشخصي لتقييم ملاءمة المعلومات أو الخدمات المقدمة في تلك المواقع. عدم وجود رابط لموقع ما لا يعني أنه غير مناسب.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        المواقع المرتبطة تتم مراجعتها بانتظام استنادًا إلى استخدام العملاء وتعليقاتهم.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        لسنا مسؤولين عن محتوى أي موقع مرتبط، ولا عن النتائج المترتبة على استخدامك للمعلومات أو الخدمات فيه. كما لا نضمن عمل هذه الروابط بشكل دائم.
+                    </p>
+                    <p class="leading-relaxed text-gray-700">
+                        قد تكون لمواقع الطرف الثالث "شروط وأحكام" تختلف عن شروطنا، لذلك لا تفترض أن شروطنا تنطبق عليها.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">محتوى من أطراف ثالثة</h2>
+                    <p class="leading-relaxed text-gray-700">
+                        قد نعرض محتوى خارجيًا مدمجًا من مواقع أخرى مثل يوتيوب أو مواقع التواصل الاجتماعي. هذا المحتوى لا يُنشر مباشرة على موقعنا/ تطبيقنا، بل يتم عرضه عبر أدوات وخدمات تقدمها تلك المواقع. ولسنا مسؤولين عن هذا المحتوى.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">الحماية من الفيروسات والأمان</h2>
+                    <p class="leading-relaxed text-gray-700">
+                        نقوم باختبار موقعنا بانتظام أثناء عملية تطويره، ولكن يجب عليك اتخاذ احتياطاتك الخاصة لضمان أن طريقة وصولك إلى الموقع/ التطبيق لا تعرضك لمخاطر مثل الفيروسات أو البرمجيات الخبيثة. من الحكمة دائمًا استخدام برنامج مكافحة الفيروسات على أي ملف تقوم بتحميله من الإنترنت.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">التغييرات على هذه السياسة</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        قد تتغير سياسة الخصوصية من وقت لآخر مع تطويرنا للخدمات والمعلومات على الموقع/ التطبيق. إن مراجعة هذه الصفحة بشكل دوري تضمن معرفتك دائمًا بما نجمعه من معلومات وكيف نستخدمها والظروف التي قد نشاركها فيها مع أطراف أخرى.
+                    </p>
+                    <p class="leading-relaxed text-gray-700">
+                        عليك مراجعة سياسة الخصوصية في كل مرة تستخدم فيها الموقع/ التطبيق، حتى وإن كنت قد زرته سابقًا، للتأكد من معرفتك بأحدث التغييرات.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">كيف تتواصل معنا؟</h2>
+                    <p class="mb-6 leading-relaxed text-gray-700">
+                        إذا كانت لديك أي أسئلة بشأن استخدام بياناتك الشخصية الواردة في هذا البيان، يرجى التواصل مع مسؤول حماية البيانات:
+                    </p>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="text-gray-700">
+                            <strong>عبر البريد الإلكتروني:</strong> contact@zaho.ly
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- English Content -->
+        <div id="content-en" class="content-section hidden" dir="ltr">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Privacy Policy</h1>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto rounded"></div>
+                <p class="text-gray-600 mt-4 text-lg">Zaho Electronic Payment Services</p>
+                <p class="text-gray-500 text-sm mt-2">Last Updated: January 2025</p>
+            </div>
+
+            <div class="prose prose-lg max-w-none">
+                <section class="mb-12">
+                    <p class="mb-6 leading-relaxed text-gray-700">
+                        This policy explains the privacy of the personal information we may collect from you and the purposes for which it will be used. By using this website/application, you agree to the data practices described in this policy.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">Who owns this website/application?</h2>
+                    <p class="leading-relaxed text-gray-700">
+                        The website/application is owned by Zaho Electronic Payment Services – Ganzour, Tripoli, Libya. Registered trade name: Hawelli (حوّلي).
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">What information do we collect and how do we use it?</h2>
+                    <p class="mb-6 leading-relaxed text-gray-700">
+                        Depending on the services you use through the website/application, we may collect different types of information. These types and their uses are explained below:
+                    </p>
+                    
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Information you provide to us</h3>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        We collect and process information you may provide for specific purposes, such as your name, email, location, national ID, passport number, and phone number.
+                    </p>
+                    <p class="mb-6 leading-relaxed text-gray-700">
+                        We use these details to provide information about any product or service you request from us and to communicate with you. If you contact us through some services on the website/application, we may request additional information to provide a more tailored response to your needs.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">Who do we share your personal data with?</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        We share your personal data only with the following entities and for the purposes mentioned above:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>Business and banking partners (e.g., local cards).</li>
+                        <li>Financial, judicial, or governmental authorities, as required by law.</li>
+                        <li>Certain regulated professionals (e.g., lawyers and auditors).</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">Why and on what basis do we use your personal data?</h2>
+                    
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">(A) To comply with legal and regulatory obligations</h3>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        We use your personal data to meet various legal and regulatory requirements, including:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>Anti-money laundering and combating terrorism financing.</li>
+                        <li>Compliance with international sanctions and embargo laws.</li>
+                        <li>Tax compliance and reporting obligations.</li>
+                        <li>Adherence to banking and financial regulations, including:
+                            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                                <li>Implementing security measures to prevent misuse and fraud.</li>
+                                <li>Monitoring transactions outside your usual activity.</li>
+                                <li>Assessing credit risk and repayment capacity.</li>
+                                <li>Risk monitoring and reporting.</li>
+                                <li>Responding to official requests from competent public or judicial authorities.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">(B) To perform a contract with you or take pre-contractual measures upon your request</h3>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        We use your personal data to conclude and execute contracts with you, including:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>Providing information about our products and services.</li>
+                        <li>Assisting you and responding to your requests.</li>
+                        <li>Assessing the conditions under which we can provide a product or service to you.</li>
+                        <li>Providing products or services to corporate clients you are associated with.</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">(C) For our legitimate interests</h3>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        We use your personal data to develop our products and services, improve risk management, and defend our legal interests, including:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>Transaction verification.</li>
+                        <li>Fraud prevention.</li>
+                        <li>IT management (infrastructure, business continuity, cybersecurity).</li>
+                        <li>Creating statistical models through transaction analysis (e.g., credit risk assessment).</li>
+                    </ul>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        In these cases, data is aggregated and anonymized to provide general market insights.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        Customizing our commercial offers by:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>Improving the quality of banking, financial, and insurance services.</li>
+                        <li>Offering products and services suitable to your profile.</li>
+                    </ul>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        This is done through:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>Segmenting customers and interested parties.</li>
+                        <li>Analyzing usage patterns and preferences (branch visits, emails, website visits, etc.).</li>
+                        <li>Sharing data with another company in the same group if you are or may become a client.</li>
+                        <li>Tailoring offers based on the products or services you already have.</li>
+                        <li>Monitoring transactions to detect unusual activities (e.g., unusually large deposits).</li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">(D) Respecting your choices when we ask for your consent</h3>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        In some cases, we require your consent to process your data, such as:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>When processing involves automated decisions that legally or significantly affect you.</li>
+                        <li>When data is processed for purposes other than those mentioned above, where we notify you and request consent if necessary.</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">How long do we keep your personal data?</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        We retain your personal data for the longer of:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>The period required by applicable laws and regulations, or</li>
+                        <li>The period necessary for operational purposes (e.g., account management, customer relationship management, responding to disputes or regulatory authorities).</li>
+                    </ul>
+                    <p class="leading-relaxed text-gray-700">
+                        For clients, most data is retained for the duration of the contractual relationship and up to 10 years after its termination.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">Website/Application Usage Information</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        We collect and store some information every time you interact with us. We gather usage data during your visit to our website/application, including date, time, pages viewed or searched, and other browsing activity.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        We may also use this information to generate statistical data about website/application usage, which can be used or shared with third parties for marketing or business strategy purposes, without identifying any individual.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        We collect usage information to help us:
+                    </p>
+                    <ul class="list-disc list-inside mb-6 space-y-2 text-gray-700">
+                        <li>Develop and provide services and information that better meet your needs.</li>
+                        <li>Inform you about events, services, and products we believe may interest you.</li>
+                        <li>Communicate with you if you have agreed to it.</li>
+                    </ul>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">IP Addresses</h2>
+                    <p class="leading-relaxed text-gray-700">
+                        We use IP addresses to analyze trends, track user movement, and collect general demographic information for analytical purposes. IP addresses are not linked to personally identifiable information.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">Cookies</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        When visiting our website/application, we collect standard internet log information and visitor behavior patterns. This is to understand the number of visitors to different sections of the website/application. Data is collected in a way that does not identify any individual.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        Our visitor analysis tool uses cookies, which are text files placed on your device to collect information. You can choose to accept or reject cookies via your browser settings.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">Links to Other Sites</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        This website/application may contain links to other sites. A link to a third-party site does not necessarily imply endorsement of its content. You should use your judgment to evaluate the suitability of information or services on those sites. Lack of a link does not imply a site is inappropriate.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        Linked sites are reviewed regularly based on customer usage and feedback.
+                    </p>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        We are not responsible for the content of any linked site, nor for the consequences of using the information or services therein. We also do not guarantee that links will always work.
+                    </p>
+                    <p class="leading-relaxed text-gray-700">
+                        Third-party sites may have terms and conditions different from ours; do not assume our terms apply to them.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">Third-party Content</h2>
+                    <p class="leading-relaxed text-gray-700">
+                        We may display external content embedded from other sites such as YouTube or social media platforms. This content is not published directly on our website/application but is displayed via tools and services provided by those sites. We are not responsible for this content.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">Virus Protection and Security</h2>
+                    <p class="leading-relaxed text-gray-700">
+                        We regularly test our website/application during development, but you should take precautions to ensure that your access does not expose you to risks such as viruses or malware. It is always recommended to use antivirus software on any files downloaded from the internet.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">Changes to This Policy</h2>
+                    <p class="mb-4 leading-relaxed text-gray-700">
+                        The privacy policy may change from time to time as we develop services and information on the website/application. Reviewing this page periodically ensures you are always aware of what information we collect, how we use it, and the circumstances under which we may share it with third parties.
+                    </p>
+                    <p class="leading-relaxed text-gray-700">
+                        You should review the privacy policy each time you use the website/application, even if you have visited it before, to ensure you are aware of the latest changes.
+                    </p>
+                </section>
+
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-6 text-gray-900">How to Contact Us</h2>
+                    <p class="mb-6 leading-relaxed text-gray-700">
+                        If you have any questions regarding the use of your personal data under this statement, please contact our Data Protection Officer:
+                    </p>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <p class="text-gray-700">
+                            <strong>By email:</strong> contact@zaho.ly
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 mt-16">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 rtl:space-x-reverse mb-4">
+                <img src="../assets/images/zaho-logo.png" alt="Zaho Logo" class="h-8 w-auto"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="hidden w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg items-center justify-center">
+                    <span class="text-white font-bold text-sm">Z</span>
+                </div>
+                <span class="text-xl font-bold gradient-text">ZAHO</span>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">شركة مختصة في الحلول الرقمية المبتكرة والخدمات المالية الإلكترونية</p>
+            <p class="text-gray-500 text-xs">
+                &copy; <span id="current-year"></span> Zaho. جميع الحقوق محفوظة.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Language toggle functionality
+        function toggleLanguage(lang) {
+            const arContent = document.getElementById('content-ar');
+            const enContent = document.getElementById('content-en');
+            const arBtn = document.getElementById('btn-ar');
+            const enBtn = document.getElementById('btn-en');
+            const htmlElement = document.documentElement;
+            
+            if (lang === 'ar') {
+                arContent.classList.remove('hidden');
+                enContent.classList.add('hidden');
+                arBtn.classList.add('bg-primary-600', 'text-white');
+                arBtn.classList.remove('bg-gray-100', 'text-gray-700');
+                enBtn.classList.add('bg-gray-100', 'text-gray-700');
+                enBtn.classList.remove('bg-primary-600', 'text-white');
+                htmlElement.setAttribute('lang', 'ar');
+                htmlElement.setAttribute('dir', 'rtl');
+            } else {
+                enContent.classList.remove('hidden');
+                arContent.classList.add('hidden');
+                enBtn.classList.add('bg-primary-600', 'text-white');
+                enBtn.classList.remove('bg-gray-100', 'text-gray-700');
+                arBtn.classList.add('bg-gray-100', 'text-gray-700');
+                arBtn.classList.remove('bg-primary-600', 'text-white');
+                htmlElement.setAttribute('lang', 'en');
+                htmlElement.setAttribute('dir', 'ltr');
+            }
+        }
+    </script>
+</body>
+</html>
