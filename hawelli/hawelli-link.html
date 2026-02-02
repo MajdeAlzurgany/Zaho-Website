@@ -47,7 +47,7 @@ body {
   flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 12px; /* match header spacing on index.html */
   margin-bottom: 15px;
 }
 
@@ -58,6 +58,19 @@ body {
   object-fit: cover;
   padding: 6px;
   background: #fff;
+}
+
+/* Ensure Arabic (RTL) spacing exactly matches the English (12px) */
+html[dir="ar"] .hero-title img.logo {
+  margin-inline-start: 12px;
+}
+
+/* LTR: place logo on the left and add the same spacing as Arabic */
+html[dir="ltr"] .hero-title {
+  flex-direction: row; /* logo left, title right */
+}
+html[dir="ltr"] .hero-title img.logo {
+  margin-inline-end: 12px; /* match Arabic spacing exactly */
 }
 
 .hero-title h1 {
